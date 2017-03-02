@@ -3,7 +3,7 @@ new Vue({
 
     data: {
         sharedState: window.store.state,
-        showCards: null
+        showCards: true // set to 'null' to show both
     },
 
     methods: {

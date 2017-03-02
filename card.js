@@ -1,17 +1,47 @@
 Vue.component("judo-cards", {
     template: "<div class='c-judo-cards'> \
-            <button v-on:click='pickCard'>Pick card</button>\
-            <button v-on:click='flipCard'>Flip card</button>\
-            <div class='side-a' v-show='showSideA !== false'> \
-                <h1>Side A - Name</h1> \
-                <h2>{{ card.romaji }}</h2>\
-                <p>Belt: {{ card.belt }}</p> \
-                <p>Technique type: {{ card.technique }}</p> \
+            <div class='row'> \
+                <div class='col'> \
+                    <!-- <button v-on:click='flipCard' class='btn btn-primary'>Flip card</button> --> \
+                    <button v-on:click='pickCard' class='btn btn-secondary'>Pick another card</button> \
+                </div> \
             </div> \
-            <div class='side-b' v-show='showSideA !== true'> \
-                <h1>Side B - Video</h1> \
-                <div v-show='hasVideo' class='video'> \
-                    <iframe v-bind:src='youtubeEmbedUrl' width='640' height='360' frameborder='0' style='position:absolute;width:100%;height:100%;left:0' allowfullscreen></iframe> \
+            <br /> \
+            <div class='row' v-if='hasVideo'> \
+                <div class='col-md-4 col-sm-6' v-show='showSideA !== false'> \
+                    <div v-on:click='flipCard' class='card side-a card-primary card-inverse' > \
+                        <div class='card-block'> \
+                            <h3 class='card-title'>{{ card.romaji }}</h3> \
+                            <p class='card-text'>Belt: {{ card.belt }}</p> \
+                            <p class='card-text'>Technique type: {{ card.technique }}</p> \
+                        </div> \
+                    </div> \
+                </div> \
+                <div class='col-md-4 col-sm-6' v-show='showSideA !== true'> \
+                    <div v-on:click='flipCard' class='card side-b card-info card-inverse'> \
+                        <div class='card-block'> \
+                            <h3 class='card-title'>{{ card.romaji }}</h3> \
+                            <div class='card-block'> \
+                                <div class='video'> \
+                                    <iframe v-bind:src='youtubeEmbedUrl' width='640' height='360' frameborder='0' style='position:absolute;width:100%;height:100%;left:0' allowfullscreen></iframe> \
+                                </div> \
+                            </div> \
+                        </div> \
+                    </div> \
+                </div> \
+            </div> \
+            <div class='row' v-else> \
+                <div class='col-md-4 col-sm-6'> \
+                    <div class='card card-danger card-inverse'> \
+                        <div class='card-block'> \
+                            <h3 class='card-title'>Sorry!</h3> \
+                            <div class='card-block'> \
+                                <p class='card-text'>There are no videos for the filters you selected.</p> \
+                                <p class='card-text'>Selected belt: {{ sharedState.selectedBelt }}</p> \
+                                <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
+                            </div> \
+                        </div> \
+                    </div> \
                 </div> \
             </div> \
         </div>",
@@ -20,7 +50,7 @@ Vue.component("judo-cards", {
         return {
             sharedState: window.store.state,
             selectedTechnique: null,
-            showSideA: null
+            showSideA: true // set to 'null' to show both
         };
     },
 
@@ -33,7 +63,7 @@ Vue.component("judo-cards", {
             return this.sharedState.selectedTechnique;
         },
         hasVideo() {
-            return !!this.card.youtube;
+            return !!this.card && !!this.card.youtube;
         },
         youtubeEmbedUrl() {
             var vidQuery = this.card.youtube.indexOf("v=") + 2;

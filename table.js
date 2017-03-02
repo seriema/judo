@@ -1,9 +1,9 @@
 
 Vue.component("judo-table", {
-    template: "<div> \
-            <p>Selected sort: {{ sharedState.selectedSort }}</p> \
-            <table> \
-            <thead> \
+    template: "<div class='c-judo-table'> \
+            <!-- <p>Selected sort: {{ sharedState.selectedSort }}</p> --> \
+            <table class='table'> \
+            <thead class='thead-inverse'> \
                 <tr> \
                     <th v-on:click='sharedState.selectedSort=\"romaji\"'>Name</th> \
                     <th v-on:click='sharedState.selectedSort=\"technique\"'>Technique</th> \
@@ -16,7 +16,7 @@ Vue.component("judo-table", {
                     <td>{{ tech.romaji }}</td> \
                     <td>{{ tech.technique }}</td> \
                     <td>{{ tech.belt }}</td> \
-                    <td><a v-if='!!tech.youtube' v-bind:href='tech.youtube'>YouTube</a></td> \
+                    <td><a v-if='!!tech.youtube' v-bind:href='tech.youtube' target='_blank'>YouTube</a></td> \
                 </tr> \
             </tbody> \
         </table> \

@@ -46,6 +46,11 @@ window.store = {
             return !!tech.youtube;
         });
 
+        if (filteredTechniques.length === 0) {
+            this.state.selectedTechnique = null;
+            return;
+        }
+
         var maxId = filteredTechniques.length;
         var randomId = Math.floor(Math.random() * maxId);
 

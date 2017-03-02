@@ -4,16 +4,38 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Judo Vue</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <judo-filter></judo-filter>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col">
+                <judo-filter></judo-filter>
+            </div>
+        </div>
 
-        <button v-on:click='flipView'>Toggle Card/Table</button>
+        <br />
 
-        <judo-cards v-if="showCards !== false"></judo-cards>
-        <judo-table v-if="showCards !== true"></judo-table>
+        <div class="row">
+            <div class="col">
+                <button v-on:click='flipView' class='btn btn-secondary'>Toggle Card/Table</button>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col">
+                <judo-cards v-if="showCards !== false"></judo-cards>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <judo-table v-if="showCards !== true"></judo-table>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
