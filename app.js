@@ -9,6 +9,9 @@ new Vue({
     methods: {
         flipView(event) {
             this.showCards = !this.showCards;
+        },
+        pickCard() {
+            window.store.pickCard();
         }
     }
 

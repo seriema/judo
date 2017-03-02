@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Judo Vue</title>
+    <title>Judo Belt Ranking Techniques</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -19,11 +19,10 @@
             </div>
         </div>
 
-        <br />
-
         <div class="row">
             <div class="col">
-                <button v-on:click='flipView' class='btn btn-secondary'>Toggle Card/Table</button>
+                <button v-on:click='flipView' class='btn btn-secondary'>{{ showCards ? "Show table" : "Show flip card" }}</button>
+                <button v-on:click='pickCard' v-if="showCards" class='btn btn-primary'>Pick another card</button>
             </div>
         </div>
 
@@ -31,7 +30,7 @@
 
         <div class="row">
             <div class="col">
-                <judo-cards v-if="showCards !== false"></judo-cards>
+                <judo-card v-if="showCards !== false"></judo-card>
             </div>
         </div>
 
@@ -41,6 +40,12 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer text-muted">
+      <div class="container">
+        <p>Hacked together with love by <a href="http://johansson.jp" target="_blank">John-Philip "JP" Johansson</a>. The source code is available on <a href="https://github.com/seriema/judo" target="_blank">GitHub</a>.</p>
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="data.js"></script>

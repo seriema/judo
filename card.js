@@ -1,31 +1,24 @@
-Vue.component("judo-cards", {
-    template: "<div class='c-judo-cards'> \
-            <div class='row'> \
-                <div class='col'> \
-                    <!-- <button v-on:click='flipCard' class='btn btn-primary'>Flip card</button> --> \
-                    <button v-on:click='pickCard' class='btn btn-secondary'>Pick another card</button> \
-                </div> \
-            </div> \
-            <br /> \
+Vue.component("judo-card", {
+    template: "<div class='c-judo-card'> \
             <div class='row' v-if='hasVideo'> \
-                <div class='col-md-4 col-sm-6' v-show='showSideA !== false'> \
+                <div class='col-md-8' v-show='showSideA !== false'> \
                     <div v-on:click='flipCard' class='card side-a card-primary card-inverse' > \
                         <div class='card-block'> \
                             <h3 class='card-title'>{{ card.romaji }}</h3> \
                             <p class='card-text'>Belt: {{ card.belt }}</p> \
                             <p class='card-text'>Technique type: {{ card.technique }}</p> \
+                            <small class='card-text'>Tap the card to see the answer</small> \
                         </div> \
                     </div> \
                 </div> \
-                <div class='col-md-4 col-sm-6' v-show='showSideA !== true'> \
+                <div class='col-md-8' v-show='showSideA !== true'> \
                     <div v-on:click='flipCard' class='card side-b card-info card-inverse'> \
                         <div class='card-block'> \
                             <h3 class='card-title'>{{ card.romaji }}</h3> \
-                            <div class='card-block'> \
-                                <div class='video'> \
-                                    <iframe v-bind:src='youtubeEmbedUrl' width='640' height='360' frameborder='0' style='position:absolute;width:100%;height:100%;left:0' allowfullscreen></iframe> \
-                                </div> \
+                            <div class='video'> \
+                                <iframe v-bind:src='youtubeEmbedUrl' width='640' height='360' frameborder='0' style='position:absolute;width:100%;height:100%;left:0' allowfullscreen></iframe> \
                             </div> \
+                            <small class='card-text'>Tap the card to see the question</small> \
                         </div> \
                     </div> \
                 </div> \
@@ -35,11 +28,10 @@ Vue.component("judo-cards", {
                     <div class='card card-danger card-inverse'> \
                         <div class='card-block'> \
                             <h3 class='card-title'>Sorry!</h3> \
-                            <div class='card-block'> \
-                                <p class='card-text'>There are no videos for the filters you selected.</p> \
-                                <p class='card-text'>Selected belt: {{ sharedState.selectedBelt }}</p> \
-                                <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
-                            </div> \
+                            <p class='card-text'>There are no videos for the filters you selected.</p> \
+                            <p class='card-text'>Selected belt: {{ sharedState.selectedBelt }}</p> \
+                            <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
+                            <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
                         </div> \
                     </div> \
                 </div> \
@@ -57,7 +49,7 @@ Vue.component("judo-cards", {
     computed: {
         card() {
             if (this.sharedState.selectedTechnique === null) {
-                this.pickCard();
+                window.store.pickCard();
             }
 
             return this.sharedState.selectedTechnique;
@@ -75,9 +67,6 @@ Vue.component("judo-cards", {
     },
 
     methods: {
-        pickCard() {
-            window.store.pickCard();
-        },
         flipCard() {
             this.showSideA = !this.showSideA;
         }
