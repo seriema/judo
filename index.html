@@ -3,26 +3,24 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Judo Vue</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <judo-filter></judo-filter>
 
-        <div v-if="sharedState.showCards">
-            <div class="side-a">
-                <p>Side A</p>
-            </div>
-            <div class="side-b">
-                <p>Side B</p>
-            </div>
-        </div>
-        <judo-table v-else></judo-table>
+        <button v-on:click='flipView'>Toggle Card/Table</button>
+
+        <judo-cards v-if="showCards !== false"></judo-cards>
+        <judo-table v-if="showCards !== true"></judo-table>
     </div>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="data.js"></script>
     <script src="store.js"></script>
     <script src="table.js"></script>
+    <script src="card.js"></script>
     <script src="filter.js"></script>
     <script src="app.js"></script>
 </body>

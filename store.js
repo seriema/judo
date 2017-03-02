@@ -31,24 +31,29 @@ window.store = {
         jdata: window.jdata,
         even: true,
         selectedTechniques: [],
+        selectedTechnique: null,
         selectedBelt: null,
         selectedSort: null,
-        showTable: true,
-        showCards: false
-    },
-
-    flipView(event) {
-        console.log("show table", this.state.showTable);
-        this.state.showTable = !this.state.showTable;
-        this.state.showCards = !this.state.showCards;
+        showTable: true
     },
 
     beltNames() {
-        return unique(this.state.jdata, "belt");
+        return unique(this.state.jdata, "belt").sort(); // TODO: Sort on belt rank instead
+    },
+
+    pickCard() {
+        var filteredTechniques = this.techniques().filter(function (tech) {
+            return !!tech.youtube;
+        });
+
+        var maxId = filteredTechniques.length;
+        var randomId = Math.floor(Math.random() * maxId);
+
+        this.state.selectedTechnique = filteredTechniques[randomId];
     },
 
     techniqueNames() {
-        return unique(this.state.jdata, "technique");
+        return unique(this.state.jdata, "technique").sort();
     },
 
     techniques() {

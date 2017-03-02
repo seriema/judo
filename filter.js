@@ -1,6 +1,5 @@
 Vue.component("judo-filter", {
     template: "<div> \
-        <button v-on:click='flipView'>Flip view</button> \
         <label for='belt'>Belt</label> \
         <select name='belt' v-model='sharedState.selectedBelt'> \
             <option v-bind:value='null'>All</option> \
