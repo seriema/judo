@@ -16,7 +16,7 @@ Vue.component("judo-table", {
                     <td>{{ tech.romaji }}</td> \
                     <td>{{ tech.technique }}</td> \
                     <td>{{ tech.belt }}</td> \
-                    <td><a v-bind:href='tech.youtube'>YouTube</a></td> \
+                    <td><a v-if='!!tech.youtube' v-bind:href='tech.youtube'>YouTube</a></td> \
                 </tr> \
             </tbody> \
         </table> \
