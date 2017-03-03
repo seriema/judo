@@ -29,8 +29,7 @@ Vue.component("judo-card", {
                         <div class='card-block'> \
                             <h3 class='card-title'>Sorry!</h3> \
                             <p class='card-text'>There are no videos for the filters you selected.</p> \
-                            <p class='card-text'>Selected belt: {{ sharedState.selectedBelt }}</p> \
-                            <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
+                            <p class='card-text'>Selected belt: {{ sharedState.selectedBelt || 'All belts' }}</p> \
                             <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
                         </div> \
                     </div> \
@@ -51,6 +50,9 @@ Vue.component("judo-card", {
             if (this.sharedState.selectedTechnique === null) {
                 window.store.pickCard();
             }
+
+            // Always flip the card to side A when picking a new card.
+            this.showSideA = true;
 
             return this.sharedState.selectedTechnique;
         },
