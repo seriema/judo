@@ -18,7 +18,7 @@ Vue.component("judo-card", {
                             <div class='video'> \
                                 <iframe v-bind:src='youtubeEmbedUrl' width='640' height='360' frameborder='0' style='position:absolute;width:100%;height:100%;left:0' allowfullscreen></iframe> \
                             </div> \
-                            <small class='card-text'>Tap the card to see the question</small> \
+                            <small class='card-text'>Tap the card to hide the answer</small> \
                         </div> \
                     </div> \
                 </div> \
