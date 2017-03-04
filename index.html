@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app" class="container">
-        <br />
+    <div id="app" class="container mt-4">
 
         <div class="row">
             <div class="col">
@@ -29,23 +28,14 @@
         </div>
 
         <div class="row">
-            <div class="col">
-                <button v-on:click='flipView' class='btn btn-secondary'>{{ showCards ? "Show table" : "Show flip card" }}</button>
-                <button v-on:click='pickCard' v-if="showCards" class='btn btn-primary'>Pick another card</button>
+            <div class="col-lg-6">
+                <button v-on:click='pickCard' v-if="showCards" class='btn btn-primary mb-2'>Pick another card</button>
+                <judo-card v-if="showCards"></judo-card>
             </div>
-        </div>
+            <div class="col-lg-6">
+                <button v-on:click='toggleTable' class='btn btn-link'>{{ showTable ? "Hide techniques" : "Show all filtered techniques" }}</button>
 
-        <br />
-
-        <div class="row">
-            <div class="col">
-                <judo-card v-if="showCards !== false"></judo-card>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <judo-table v-if="showCards !== true"></judo-table>
+                <judo-table v-if="showTable"></judo-table>
             </div>
         </div>
     </div>

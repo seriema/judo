@@ -3,12 +3,13 @@ new Vue({
 
     data: {
         sharedState: window.store.state,
-        showCards: true // set to 'null' to show both
+        showCards: true,
+        showTable: false
     },
 
     methods: {
-        flipView(event) {
-            this.showCards = !this.showCards;
+        toggleTable(event) {
+            this.showTable = !this.showTable;
         },
         pickCard() {
             window.store.pickCard();

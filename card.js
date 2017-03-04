@@ -1,7 +1,7 @@
 Vue.component("judo-card", {
     template: "<div class='c-judo-card'> \
             <div class='row' v-if='hasVideo'> \
-                <div class='col-md-8' v-show='showSideA !== false'> \
+                <div class='col' v-show='showSideA !== false'> \
                     <div v-on:click='flipCard' class='card side-a card-primary card-inverse' > \
                         <div class='card-block'> \
                             <h3 class='card-title'>{{ card.romaji }}</h3> \
@@ -11,7 +11,7 @@ Vue.component("judo-card", {
                         </div> \
                     </div> \
                 </div> \
-                <div class='col-md-8' v-show='showSideA !== true'> \
+                <div class='col' v-show='showSideA !== true'> \
                     <div v-on:click='flipCard' class='card side-b card-info card-inverse'> \
                         <div class='card-block'> \
                             <h3 class='card-title'>{{ card.romaji }}</h3> \
@@ -24,7 +24,7 @@ Vue.component("judo-card", {
                 </div> \
             </div> \
             <div class='row' v-else> \
-                <div class='col-md-4 col-sm-6'> \
+                <div class='col'> \
                     <div class='card card-danger card-inverse'> \
                         <div class='card-block'> \
                             <h3 class='card-title'>Sorry!</h3> \
