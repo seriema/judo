@@ -5,6 +5,7 @@ Vue.component("judo-card", {
                     <div v-on:click='flipCard' class='card side-a card-primary card-inverse' > \
                         <div class='card-block'> \
                             <h3 class='card-title'>{{ card.romaji }}</h3> \
+                            <p v-show='sharedState.showTranslation' class='card-title'><em>Swedish translation: {{ card.swedish }}</em></p> \
                             <p class='card-text'>Belt: {{ card.belt }}</p> \
                             <p class='card-text'>Technique type: {{ card.technique }}</p> \
                             <small class='card-text'>Tap the card to see the answer</small> \
@@ -30,7 +31,7 @@ Vue.component("judo-card", {
                             <h3 class='card-title'>Sorry!</h3> \
                             <p class='card-text'>There are no videos for the filters you selected.</p> \
                             <p class='card-text'>Selected belt: {{ sharedState.selectedBelt || 'All belts' }}</p> \
-                            <p class='card-text'>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
+                            <p class='card-text '>Selected technique types: {{ sharedState.selectedTechniques }}</p> \
                         </div> \
                     </div> \
                 </div> \

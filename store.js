@@ -34,7 +34,8 @@ window.store = {
         selectedTechnique: null,
         selectedBelt: null,
         selectedSort: null,
-        showTable: true
+        showTable: true,
+        showTranslation: false
     },
 
     beltNames() {
@@ -80,5 +81,9 @@ window.store = {
         return techniques.sort(function (a, b) {
             return sortCalc(a, b, this.state.selectedSort === null ? "romaji" : this.state.selectedSort);
         }.bind(this));
+    },
+
+    toggleTranslation() {
+        this.state.showTranslation = !this.state.showTranslation;
     }
 };

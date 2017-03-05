@@ -11,6 +11,9 @@ new Vue({
         toggleTable(event) {
             this.showTable = !this.showTable;
         },
+        toggleTranslation(event) {
+            window.store.toggleTranslation();
+        },
         pickCard() {
             window.store.pickCard();
         }

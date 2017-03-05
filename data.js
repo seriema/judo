@@ -1,6 +1,7 @@
 window.jdata = [
     {
         romaji: "de ashi harai",
+        swedish: "gå framåt, ben, svep",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -8,7 +9,8 @@ window.jdata = [
         youtube: "https://www.youtube.com/watch?v=VFgPK3l5d9U&list=PLkgloM3XaRGhCDMRLsBbRiVaILQ2u44_g&index=1"
     },
     {
-        romaji: "kouchi gari",
+        romaji: "ko uchi gari",
+        swedish: "liten, insida, svepande rörelse",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -16,7 +18,8 @@ window.jdata = [
         youtube: "https://www.youtube.com/watch?v=-SuAzlYzpJk&index=2&list=PLkgloM3XaRGhCDMRLsBbRiVaILQ2u44_g"
     },
     {
-        romaji: "ouchi gari",
+        romaji: "o uchi gari",
+        swedish: "stor, insida, svepande rörelse",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -25,6 +28,7 @@ window.jdata = [
     },
     {
         romaji: "uki goshi",
+        swedish: "drivande, höft",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -33,6 +37,7 @@ window.jdata = [
     },
     {
         romaji: "o goshi",
+        swedish: "stor, höft",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -41,6 +46,7 @@ window.jdata = [
     },
     {
         romaji: "tsuri goshi",
+        swedish: "dra (fiske), höft",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -48,7 +54,8 @@ window.jdata = [
         youtube: "https://www.youtube.com/watch?v=OLqryPZyUuA&list=PLkgloM3XaRGhCDMRLsBbRiVaILQ2u44_g&index=6"
     },
     {
-        romaji: "osoto gari",
+        romaji: "o soto gari",
+        swedish: "stor, yttre, svepande rörelse",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -56,7 +63,8 @@ window.jdata = [
         youtube: "https://www.youtube.com/watch?v=1JL1Hw7M3cU&list=PLkgloM3XaRGhCDMRLsBbRiVaILQ2u44_g&index=7"
     },
     {
-        romaji: "kubi-nage",
+        romaji: "kubi nage",
+        swedish: "hals, kast",
         technique: "Nage waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -65,6 +73,7 @@ window.jdata = [
     },
     {
         romaji: "hon kesa gatame",
+        swedish: "ursprung, buddhistiskt klädesplagg, fasthållning",
         technique: "Ne waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -73,6 +82,7 @@ window.jdata = [
     },
     {
         romaji: "makura kesa gatame",
+        swedish: "kudde?, buddhistiskt klädesplagg, fasthållning",
         technique: "Ne waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -81,6 +91,7 @@ window.jdata = [
     },
     {
         romaji: "kuzure kesa gatame",
+        swedish: "variant, buddhistiskt klädesplagg, fasthållning",
         technique: "Ne waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -89,6 +100,7 @@ window.jdata = [
     },
     {
         romaji: "kuzure yoko shiho gatame",
+        swedish: "variant, sida, i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -97,6 +109,7 @@ window.jdata = [
     },
     {
         romaji: "mune gatame",
+        swedish: "bröst, fasthållning",
         technique: "Ne waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -105,6 +118,7 @@ window.jdata = [
     },
     {
         romaji: "mae ukemi",
+        swedish: "framsida, fall",
         technique: "Ukemi waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -113,6 +127,7 @@ window.jdata = [
     },
     {
         romaji: "ushiro ukemi",
+        swedish: "baksida, fall",
         technique: "Ukemi waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -121,6 +136,7 @@ window.jdata = [
     },
     {
         romaji: "yoko ukemi",
+        swedish: "sida, fall",
         technique: "Ukemi waza",
         belt: "Yellow",
         rank: "5 kyu",
@@ -129,6 +145,7 @@ window.jdata = [
     },
     {
         romaji: "ko soto gari",
+        swedish: "liten, yttre, svepande rörelse",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -137,6 +154,7 @@ window.jdata = [
     },
     {
         romaji: "ko soto gake",
+        swedish: "liten, yttre, krok",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -145,6 +163,7 @@ window.jdata = [
     },
     {
         romaji: "koshi guruma",
+        swedish: "höft, hjul",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -153,6 +172,7 @@ window.jdata = [
     },
     {
         romaji: "ippon seoi nage",
+        swedish: "ett, ta upp på ryggen, kast",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -161,6 +181,7 @@ window.jdata = [
     },
     {
         romaji: "morote seoi nage",
+        swedish: "med båda händerna, ta upp på ryggen, kast",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -169,6 +190,7 @@ window.jdata = [
     },
     {
         romaji: "tsuri komi goshi",
+        swedish: "dra (fiske), ta(?), höft",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -177,6 +199,7 @@ window.jdata = [
     },
     {
         romaji: "tai otoshi",
+        swedish: "kropp, nedfällning",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -185,6 +208,7 @@ window.jdata = [
     },
     {
         romaji: "harai goshi",
+        swedish: "svep, höft",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -193,6 +217,7 @@ window.jdata = [
     },
     {
         romaji: "sasae tsuri komi ashi",
+        swedish: "stöd, dra (fiske), ta(?), höft",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -201,6 +226,7 @@ window.jdata = [
     },
     {
         romaji: "hiza guruma",
+        swedish: "knä, hjul",
         technique: "Nage waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -209,6 +235,7 @@ window.jdata = [
     },
     {
         romaji: "ushiro kesa gatame",
+        swedish: "baksida, buddhistiskt klädesplagg, fasthållning",
         technique: "Ne waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -217,6 +244,7 @@ window.jdata = [
     },
     {
         romaji: "kami shiho gatame",
+        swedish: "ställning(?), i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -225,6 +253,7 @@ window.jdata = [
     },
     {
         romaji: "kuzure kami shiho gatame",
+        swedish: "variant, ställning(?), i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -233,6 +262,7 @@ window.jdata = [
     },
     {
         romaji: "yoko shiho gatame",
+        swedish: "sida, i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Orange",
         rank: "4 kyu",
@@ -241,6 +271,7 @@ window.jdata = [
     },
     {
         romaji: "okuri ashi barai",
+        swedish: "par, ben, svep",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -249,6 +280,7 @@ window.jdata = [
     },
     {
         romaji: "harai tsurikomi ashi",
+        swedish: "svep, dra (fiske), ben",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -257,6 +289,7 @@ window.jdata = [
     },
     {
         romaji: "hane goshi",
+        swedish: "vinge, höft",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -265,6 +298,7 @@ window.jdata = [
     },
     {
         romaji: "uchi mata",
+        swedish: "insida, ?",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -273,6 +307,7 @@ window.jdata = [
     },
     {
         romaji: "seoi otoshi",
+        swedish: "ta upp på ryggen, nedfällning",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -281,6 +316,7 @@ window.jdata = [
     },
     {
         romaji: "tomoe nage",
+        swedish: "hjul, kast",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -289,6 +325,7 @@ window.jdata = [
     },
     {
         romaji: "sumi gaeshi",
+        swedish: "hörn, vändning",
         technique: "Nage waza",
         belt: "Green",
         rank: "3 kyu",
@@ -296,7 +333,8 @@ window.jdata = [
         youtube: "https://www.youtube.com/watch?v=kod5QHdmE7E&index=7&list=PLkgloM3XaRGhjxs_5bcBsvcLb2O4A-N8B"
     },
     {
-        romaji: "tate shio gatame",
+        romaji: "tate shiho gatame",
+        swedish: "vertikal, i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Green",
         rank: "3 kyu",
@@ -305,6 +343,7 @@ window.jdata = [
     },
     {
         romaji: "kuzure tate shio gatame",
+        swedish: "variant, vertikal, i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Green",
         rank: "3 kyu",
@@ -313,6 +352,7 @@ window.jdata = [
     },
     {
         romaji: "kata gatame",
+        swedish: "skuldra, fasthållning",
         technique: "Ne waza",
         belt: "Green",
         rank: "3 kyu",
@@ -321,6 +361,7 @@ window.jdata = [
     },
     {
         romaji: "sode tsuri komi goshi",
+        swedish: "ärm, dra (fiske), ta(?), höft",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -329,6 +370,7 @@ window.jdata = [
     },
     {
         romaji: "soto maki komi",
+        swedish: "ärm, ?, ta(?)",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -337,6 +379,7 @@ window.jdata = [
     },
     {
         romaji: "o guruma",
+        swedish: "stor, hjul",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -345,6 +388,7 @@ window.jdata = [
     },
     {
         romaji: "ashi guruma",
+        swedish: "ben, hjul",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -353,6 +397,7 @@ window.jdata = [
     },
     {
         romaji: "uki waza",
+        swedish: "drivande, teknik",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -361,6 +406,7 @@ window.jdata = [
     },
     {
         romaji: "tani otoshi",
+        swedish: "dal, nedfällning",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -369,6 +415,7 @@ window.jdata = [
     },
     {
         romaji: "o soto guruma",
+        swedish: "stor, yttre, hjul",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -377,6 +424,7 @@ window.jdata = [
     },
     {
         romaji: "o soto otoshi",
+        swedish: "stor, yttre, nedfällning",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -385,6 +433,7 @@ window.jdata = [
     },
     {
         romaji: "ushiro goshi",
+        swedish: "baksida, höft",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -393,6 +442,7 @@ window.jdata = [
     },
     {
         romaji: "utsuri goshi",
+        swedish: "?, höft",
         technique: "Nage waza",
         belt: "Blue",
         rank: "2 kyu",
@@ -401,6 +451,7 @@ window.jdata = [
     },
     {
         romaji: "yoko otoshi",
+        swedish: "sida, nedfällning",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -409,6 +460,7 @@ window.jdata = [
     },
     {
         romaji: "yoko gake",
+        swedish: "sida, krok",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -417,6 +469,7 @@ window.jdata = [
     },
     {
         romaji: "yoko guruma",
+        swedish: "sida, hjul",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -425,6 +478,7 @@ window.jdata = [
     },
     {
         romaji: "uki otoshi",
+        swedish: "drivande, nedfällning",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -433,6 +487,7 @@ window.jdata = [
     },
     {
         romaji: "sumi otoshi",
+        swedish: "hörn, nedfällning",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -441,6 +496,7 @@ window.jdata = [
     },
     {
         romaji: "morote gari",
+        swedish: "med båda händerna, svepande rörelse",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -449,6 +505,7 @@ window.jdata = [
     },
     {
         romaji: "kata guruma",
+        swedish: "skuldra, hjul",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -457,6 +514,7 @@ window.jdata = [
     },
     {
         romaji: "te guruma",
+        swedish: "hand, hjul",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -465,6 +523,7 @@ window.jdata = [
     },
     {
         romaji: "sukui nage",
+        swedish: "ösa upp, kast",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
@@ -473,6 +532,7 @@ window.jdata = [
     },
     {
         romaji: "ura nage",
+        swedish: "motsatt, kast",
         technique: "Nage waza",
         belt: "Brown",
         rank: "1 kyu",
