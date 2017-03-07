@@ -18,12 +18,22 @@
     left: 0;
 }
 
-.c-judo-card .card-primary {
-    background-color: #57a275;
-    border-color: #57a275;
+.c-judo-card .card {
+    border-width: 20px;
+    border-radius: 1.25rem;
 }
-
-.c-judo-card .card-info {
-    background-color: #5ec2e7;
-    border-color: #5ec2e7;
+.c-judo-card .card.yellow {
+    border-color: #FB1;
+}
+.c-judo-card .card.orange {
+    border-color: #FA771E;
+}
+.c-judo-card .card.green {
+    border-color: #1A5E25;
+}
+.c-judo-card .card.blue {
+    border-color: #101CA7;
+}
+.c-judo-card .card.brown {
+    border-color: #6A5720;
 }

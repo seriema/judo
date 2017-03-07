@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <button v-on:click='pickCard' v-if="showCards" class='btn btn-primary mb-2'>Pick another card</button>
-                <button v-on:click='toggleTranslation' v-if="showCards && !!(sharedState.selectedTechnique && sharedState.selectedTechnique.swedish)" class='btn btn-secondary mb-2'>{{ sharedState.showTranslation ? "Hide hint" : "Show hint (in Swedish)" }}</button>
+                <button v-on:click='toggleTranslation' v-if="showCards && !!(sharedState.selectedTechnique && sharedState.selectedTechnique.swedish)" class='btn btn-secondary mb-2'>{{ sharedState.showTranslation ? "Hide hint" : "Show hint" }}</button>
                 <judo-card v-if="showCards"></judo-card>
             </div>
             <div class="col-lg-6">
