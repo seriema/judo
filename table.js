@@ -11,7 +11,7 @@ Vue.component("judo-table", {
                 </tr> \
             </thead> \
             <tbody> \
-                <tr v-for='tech in techniques' :key='tech.romaji'> \
+                <tr v-for='tech in techniques' :key='tech.romaji' v-bind:class='{ \"table-active\": tech.romaji === sharedState.selectedTechnique.romaji }'> \
                     <td> \
                         <a v-if='!!tech.youtube' v-bind:href='tech.youtube' target='_blank'>{{ tech.romaji }}</a> \
                         <span v-else>{{ tech.romaji }}</span> \
