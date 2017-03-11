@@ -78,7 +78,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 1,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=Hqt_qagQWQw&index=1&list=PLkgloM3XaRGiRHparlJ2DFtpx8S4Cnlke"
     },
     {
         romaji: "makura kesa gatame",
@@ -87,7 +87,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 2,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=k9MYaHbYqnQ&index=2&list=PLkgloM3XaRGiRHparlJ2DFtpx8S4Cnlke"
     },
     {
         romaji: "kuzure kesa gatame",
@@ -96,7 +96,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 3,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=uPDfgMMTgwk&index=3&list=PLkgloM3XaRGiRHparlJ2DFtpx8S4Cnlke"
     },
     {
         romaji: "kuzure yoko shiho gatame",
@@ -105,7 +105,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 4,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=S94hl6hsq2g&index=4&list=PLkgloM3XaRGiRHparlJ2DFtpx8S4Cnlke"
     },
     {
         romaji: "mune gatame",
@@ -114,7 +114,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 5,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=JlhqZhDT1zc&index=5&list=PLkgloM3XaRGiRHparlJ2DFtpx8S4Cnlke"
     },
     {
         romaji: "mae ukemi",
@@ -123,7 +123,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 1,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=oUeO4lBZVAY&list=PLkgloM3XaRGjNcb-ruut6PlRT7IntQkwO&index=1"
     },
     {
         romaji: "ushiro ukemi",
@@ -132,7 +132,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 2,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=rScAuU_Zcwk&list=PLkgloM3XaRGjNcb-ruut6PlRT7IntQkwO&index=2"
     },
     {
         romaji: "yoko ukemi",
@@ -141,7 +141,7 @@ window.jdata = [
         belt: "Yellow",
         rank: "5 kyu",
         order: 3,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=xPHFTk4MFz0&list=PLkgloM3XaRGjNcb-ruut6PlRT7IntQkwO&index=3"
     },
     {
         romaji: "ko soto gari",
@@ -240,7 +240,7 @@ window.jdata = [
         belt: "Orange",
         rank: "4 kyu",
         order: 1,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=eekPtd_n0a8&index=1&list=PLkgloM3XaRGjxFKsCG542WwaVXMB3wZn2"
     },
     {
         romaji: "kami shiho gatame",
@@ -249,7 +249,7 @@ window.jdata = [
         belt: "Orange",
         rank: "4 kyu",
         order: 2,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=uFLgrehPr2c&list=PLkgloM3XaRGjxFKsCG542WwaVXMB3wZn2&index=2"
     },
     {
         romaji: "kuzure kami shiho gatame",
@@ -258,7 +258,7 @@ window.jdata = [
         belt: "Orange",
         rank: "4 kyu",
         order: 3,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=noaBgIcgO88&index=3&list=PLkgloM3XaRGjxFKsCG542WwaVXMB3wZn2"
     },
     {
         romaji: "yoko shiho gatame",
@@ -267,7 +267,7 @@ window.jdata = [
         belt: "Orange",
         rank: "4 kyu",
         order: 4,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=H34sVtj3vg8&list=PLkgloM3XaRGjxFKsCG542WwaVXMB3wZn2&index=4"
     },
     {
         romaji: "okuri ashi barai",
@@ -339,16 +339,16 @@ window.jdata = [
         belt: "Green",
         rank: "3 kyu",
         order: 1,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=9KysCnKFuLE&index=1&list=PLkgloM3XaRGjMKBpcAYzbZlBXgQEkNC53"
     },
     {
-        romaji: "kuzure tate shio gatame",
+        romaji: "kuzure tate shiho gatame",
         swedish: "variant, vertikal, i fyra riktningar, fasthållning",
         technique: "Ne waza",
         belt: "Green",
         rank: "3 kyu",
         order: 2,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=i9VUQhqxYJU&list=PLkgloM3XaRGjMKBpcAYzbZlBXgQEkNC53&index=2"
     },
     {
         romaji: "kata gatame",
@@ -357,7 +357,7 @@ window.jdata = [
         belt: "Green",
         rank: "3 kyu",
         order: 3,
-        youtube: ""
+        youtube: "https://www.youtube.com/watch?v=1j0V2xbdQdg&list=PLkgloM3XaRGjMKBpcAYzbZlBXgQEkNC53&index=3"
     },
     {
         romaji: "sode tsuri komi goshi",
