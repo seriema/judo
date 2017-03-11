@@ -1,17 +1,16 @@
 
 Vue.component("judo-table", {
     template: "<div class='c-judo-table'> \
-            <!-- <p>Selected sort: {{ sharedState.selectedSort }}</p> --> \
             <table class='table'> \
             <thead class='thead-inverse'> \
                 <tr> \
-                    <th v-on:click='sharedState.selectedSort=\"romaji\"'>Name</th> \
-                    <th v-on:click='sharedState.selectedSort=\"technique\"'>Technique</th> \
-                    <th v-on:click='sharedState.selectedSort=\"belt\"'>Belt</th> \
+                    <th v-on:click='setSort(\"romaji\")' v-bind:class='{ \"font-italic\": sharedState.selectedSort === \"romaji\" }'>Name</th> \
+                    <th v-on:click='setSort(\"technique\")' v-bind:class='{ \"font-italic\": sharedState.selectedSort === \"technique\" }'>Technique</th> \
+                    <th v-on:click='setSort(\"belt\")' v-bind:class='{ \"font-italic\": sharedState.selectedSort === \"belt\" }'>Belt</th> \
                 </tr> \
             </thead> \
             <tbody> \
-                <tr v-for='tech in techniques' :key='tech.romaji' v-bind:class='{ \"table-active\": tech.romaji === sharedState.selectedTechnique.romaji }'> \
+                <tr v-for='tech in techniques' :key='tech.romaji' v-bind:class='{ \"table-active\": tech.romaji === sharedState.selectedTechniqueName }'> \
                     <td> \
                         <a v-if='!!tech.youtube' v-bind:href='tech.youtube' target='_blank'>{{ tech.romaji }}</a> \
                         <span v-else>{{ tech.romaji }}</span> \
@@ -32,6 +31,12 @@ Vue.component("judo-table", {
     computed: {
         techniques() {
             return window.store.techniques();
+        }
+    },
+
+    methods: {
+        setSort(sortProp) {
+            window.store.setSelectedSort(sortProp);
         }
     }
 });

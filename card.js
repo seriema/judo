@@ -1,5 +1,7 @@
 Vue.component("judo-card", {
     template: "<div class='c-judo-card'> \
+    <button v-on:click='pickCard' class='btn btn-primary mb-2'>Pick another card</button> \
+    <button v-on:click='toggleTranslation' v-if='!!(card && card.swedish)' class='btn btn-secondary mb-2'>{{ sharedState.showTranslation ? \"Hide hint\" : \"Show hint\" }}</button> \
             <div class='row' v-if='hasVideo'> \
                 <div class='col' v-show='showSideA !== false'> \
                     <div v-on:click='flipCard' class='card side-a' v-bind:class='card.belt.toLowerCase()'> \
@@ -41,25 +43,21 @@ Vue.component("judo-card", {
     data: function () {
         return {
             sharedState: window.store.state,
-            selectedTechnique: null,
-            showSideA: true // set to 'null' to show both
+            showSideA: true, // set to 'null' to show both
+            selectedTechnique: null
         };
     },
 
     computed: {
         card() {
-            if (this.sharedState.selectedTechnique === null) {
-                window.store.pickCard();
-            }
-
-            // Always flip the card to side A when picking a new card.
-            this.showSideA = true;
-
-            return this.sharedState.selectedTechnique;
+            this.pickCard();
+            return this.selectedTechnique;
         },
+
         hasVideo() {
             return !!this.card && !!this.card.youtube;
         },
+
         youtubeEmbedUrl() {
             var vidQuery = this.card.youtube.indexOf("v=") + 2;
             var ampersand = this.card.youtube.indexOf("&", vidQuery);
@@ -72,6 +70,32 @@ Vue.component("judo-card", {
     methods: {
         flipCard() {
             this.showSideA = !this.showSideA;
+        },
+
+        pickCard() {
+            // Always flip the card to side A when picking a new card.
+            this.showSideA = true;
+
+            var filteredTechniques = window.store.techniques().filter(function (tech) {
+                return !!tech.youtube;
+            });
+
+            var selectedTechnique = null;
+
+            if (filteredTechniques.length === 0) {
+                window.store.setSelectedTechniqueName(null);
+                this.selectedTechnique = null;
+            } else {
+                var maxId = filteredTechniques.length;
+                var randomId = Math.floor(Math.random() * maxId);
+
+                this.selectedTechnique = filteredTechniques[randomId];
+                window.store.setSelectedTechniqueName(this.selectedTechnique.romaji);
+            }
+        },
+
+        toggleTranslation(event) {
+            window.store.toggleTranslation();
         }
     }
 });
