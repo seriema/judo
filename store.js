@@ -51,16 +51,16 @@ window.store = {
         selectedTechniques: [],
         selectedTechniqueName: null,
         selectedBelt: null,
-        selectedSort: null,
+        selectedSort: "romaji",
         showTable: true,
         showTranslation: false
     },
 
     init() {
-        this.state.selectedTechniques = loadUserData("selectedTechniques", []);
-        this.state.selectedTechniqueName = loadUserData("selectedTechniqueName", null);
-        this.state.selectedBelt = loadUserData("selectedBelt", null);
-        this.state.selectedSort = loadUserData("selectedSort", null);
+        this.state.selectedTechniques = loadUserData("selectedTechniques", this.state.selectedTechniques);
+        this.state.selectedTechniqueName = loadUserData("selectedTechniqueName", this.state.selectedTechniqueName);
+        this.state.selectedBelt = loadUserData("selectedBelt", this.state.selectedBelt);
+        this.state.selectedSort = loadUserData("selectedSort", this.state.selectedSort);
     },
 
     belts() {
@@ -128,7 +128,7 @@ window.store = {
     },
 
     techniqueSortOrder(techniqueA, techniqueB) {
-        var selectedSort = this.state.selectedSort === null ? "romaji" : this.state.selectedSort;
+        var selectedSort = this.state.selectedSort;
 
         return sortOnProperty(techniqueA, techniqueB, selectedSort);
     }
