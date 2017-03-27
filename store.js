@@ -65,7 +65,11 @@ window.store = {
 
     belts() {
         // The belts from the data
-        var belts = unique(this.state.jdata, "belt")
+        var belts = unique(this.state.jdata, "beltjudo")
+        .filter(function (belt) {
+            // Filter out techniques with no belt in judo (in the future I want to show the jujutsu techniques as well)
+            return !!belt;
+        })
         .sort()
         .map(function (belt) {
             return {
@@ -103,7 +107,11 @@ window.store = {
     },
 
     techniqueNames() {
-        return unique(this.state.jdata, "technique").sort();
+        let techniques = this.state.jdata.filter(function (technique) {
+            // Removes techniques with no technique-type name
+            return !!technique.technique;
+        });
+        return unique(techniques, "technique").sort();
     },
 
     techniques() {
@@ -122,7 +130,7 @@ window.store = {
             this.state.selectedTechniques.indexOf(technique.technique) !== -1;
 
         var validBelt = this.state.selectedBelt === null ||
-            this.state.selectedBelt === dataFriendly(technique.belt);
+            this.state.selectedBelt === dataFriendly(technique.beltjudo);
 
         return validType && validBelt;
     },

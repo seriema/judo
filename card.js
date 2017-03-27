@@ -4,11 +4,11 @@ Vue.component("judo-card", {
     <button v-on:click='toggleTranslation' v-if='!!(card && card.swedish)' class='btn btn-secondary mb-2'>{{ sharedState.showTranslation ? \"Hide hint\" : \"Show hint\" }}</button> \
             <div class='row' v-if='hasVideo'> \
                 <div class='col' v-show='showSideA !== false'> \
-                    <div v-on:click='flipCard' class='card side-a' v-bind:class='card.belt.toLowerCase()'> \
+                    <div v-on:click='flipCard' class='card side-a' v-bind:class='card.beltjudo.toLowerCase()'> \
                         <div class='card-block'> \
                             <h3 class='card-title'>{{ card.romaji }}</h3> \
                             <p v-show='sharedState.showTranslation' class='card-title'><em>Swedish translation: {{ card.swedish }}</em></p> \
-                            <p class='card-text'>Belt: {{ card.belt }}</p> \
+                            <p class='card-text'>Belt: {{ card.beltjudo }}</p> \
                             <p class='card-text'>Technique type: {{ card.technique }}</p> \
                             <small class='card-text'>Tap the card to see the answer</small> \
                         </div> \
