@@ -1,4 +1,4 @@
-window.jdata = [
+const data = [
     {
         romaji: "de ashi harai",
         swedish: "gå framåt, ben, svep",
@@ -761,3 +761,5 @@ window.jdata = [
         beltjujutsu: "Brown"
     }
 ];
+
+export default data;

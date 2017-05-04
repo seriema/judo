@@ -1,3 +1,5 @@
+import data from './data';
+
 function dataFriendly(str) {
     // Turns strings like "All belts" into "allbelts". Useful for HTML values and string comparisons.
     return str ?
@@ -6,7 +8,7 @@ function dataFriendly(str) {
 }
 
 function unique(arr, propName) {
-    var uniques = [];
+    let uniques = [];
 
     arr.map(function (a) {
         return a[propName];
@@ -20,8 +22,8 @@ function unique(arr, propName) {
 }
 
 function sortOnProperty(a, b, propName) {
-    var nameA = dataFriendly(a[propName]);
-    var nameB = dataFriendly(b[propName]);
+    const nameA = dataFriendly(a[propName]);
+    const nameB = dataFriendly(b[propName]);
     if (nameA < nameB) {
         return -1;
     }
@@ -40,32 +42,33 @@ function saveUserData(propertyName, value) {
 
 function loadUserData(propertyName, fallbackValue) {
      // JSON.parse is needed even for simple types as otherwise null value become the string "null".
-    var userData = localStorage[propertyName];
+    let userData = localStorage[propertyName];
     return userData ? JSON.parse(userData) : fallbackValue;
 }
 
-window.store = {
+let store = {
     state: {
-        jdata: window.jdata,
+        jdata: data,
         even: true,
         selectedTechniques: [],
         selectedTechniqueName: null,
-        selectedBelt: null,
+        selectedBelt: "",
         selectedSort: "romaji",
         showTable: true,
+        showCards: true,
         showTranslation: false
     },
 
     init() {
-        this.state.selectedTechniques = loadUserData("selectedTechniques", this.state.selectedTechniques);
-        this.state.selectedTechniqueName = loadUserData("selectedTechniqueName", this.state.selectedTechniqueName);
-        this.state.selectedBelt = loadUserData("selectedBelt", this.state.selectedBelt);
-        this.state.selectedSort = loadUserData("selectedSort", this.state.selectedSort);
+        store.state.selectedTechniques = loadUserData("selectedTechniques", store.state.selectedTechniques);
+        store.state.selectedTechniqueName = loadUserData("selectedTechniqueName", store.state.selectedTechniqueName);
+        store.state.selectedBelt = loadUserData("selectedBelt", store.state.selectedBelt);
+        store.state.selectedSort = loadUserData("selectedSort", store.state.selectedSort);
     },
 
     belts() {
         // The belts from the data
-        var belts = unique(this.state.jdata, "beltjudo")
+        let belts = unique(store.state.jdata, "beltjudo")
         .filter(function (belt) {
             // Filter out techniques with no belt in judo (in the future I want to show the jujutsu techniques as well)
             return !!belt;
@@ -80,34 +83,34 @@ window.store = {
 
         // Add an "select all" option as the first option
         belts.unshift({
-            value: null,
+            value: "",
             label: "All belts"
         });
         return belts;
     },
 
     setSelectedBelt(newValue) {
-        this.state.selectedBelt = newValue;
+        store.state.selectedBelt = newValue;
         saveUserData("selectedBelt", newValue);
     },
 
     setSelectedSort(newValue) {
-        this.state.selectedSort = newValue;
+        store.state.selectedSort = newValue;
         saveUserData("selectedSort", newValue);
     },
 
     setSelectedTechniques(newValues) {
-        this.state.selectedTechniques = newValues;
+        store.state.selectedTechniques = newValues;
         saveUserData("selectedTechniques", newValues);
     },
 
     setSelectedTechniqueName(newValue) {
-        this.state.selectedTechniqueName = newValue;
+        store.state.selectedTechniqueName = newValue;
         saveUserData("selectedTechniqueName", newValue);
     },
 
     techniqueNames() {
-        let techniques = this.state.jdata.filter(function (technique) {
+        let techniques = store.state.jdata.filter(function (technique) {
             // Removes techniques with no technique-type name
             return !!technique.technique;
         });
@@ -115,31 +118,33 @@ window.store = {
     },
 
     techniques() {
-        var techniques = this.state.jdata.filter(this.isValidTechnique.bind(this));
+        let techniques = store.state.jdata.filter(store.isValidTechnique.bind(this));
 
         // sort by some property
-        return techniques.sort(this.techniqueSortOrder.bind(this));
+        return techniques.sort(store.techniqueSortOrder.bind(this));
     },
 
     toggleTranslation() {
-        this.state.showTranslation = !this.state.showTranslation;
+        store.state.showTranslation = !store.state.showTranslation;
     },
 
     isValidTechnique(technique) {
-        var validType = this.state.selectedTechniques.length === 0 ||
-            this.state.selectedTechniques.indexOf(technique.technique) !== -1;
+        let validType = store.state.selectedTechniques.length === 0 ||
+            store.state.selectedTechniques.indexOf(technique.technique) !== -1;
 
-        var validBelt = this.state.selectedBelt === null ||
-            this.state.selectedBelt === dataFriendly(technique.beltjudo);
+        let validBelt = store.state.selectedBelt === null ||
+            store.state.selectedBelt === dataFriendly(technique.beltjudo);
 
         return validType && validBelt;
     },
 
     techniqueSortOrder(techniqueA, techniqueB) {
-        var selectedSort = this.state.selectedSort;
+        let selectedSort = store.state.selectedSort;
 
         return sortOnProperty(techniqueA, techniqueB, selectedSort);
     }
 };
 
-window.store.init();
+store.init();
+
+export default store;
