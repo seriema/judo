@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import store from './store';
 import Filter from './Filter.jsx';
-import Table from './Table.jsx';
-import ButtonLink from './components/ButtonLink.jsx';
+import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
+import TechniquesTable from './containers/TechniquesTable';
 import { SingleCard, TextCard, VideoCard } from './Card.jsx';
 import logo from './logo.svg';
 import './App.css';
@@ -53,7 +53,6 @@ class App extends Component {
 
     render() {
         let card = null;
-        let table = null;
 
         if (store.state.showCards) {
             if (this.state.selectedTechnique === null) {
@@ -94,15 +93,6 @@ class App extends Component {
             }
         }
 
-        if (store.state.showTable) {
-            table = <Table
-                techniques={store.techniquesWithVideo()}
-                selectedTechniqueName={store.state.selectedTechniqueName}
-                setSort={store.setSelectedSort}
-                selectedSort={store.state.selectedSort}
-            />;
-        }
-
         return (
             <div className="App container mt-4">
                 <div className="App-header">
@@ -132,12 +122,9 @@ class App extends Component {
                         {card}
                     </div>
                     <div className="col-lg-6">
-                        <ButtonLink
-                            text={store.state.showTable ? "Hide techniques": "Show all filtered techniques"}
-                            onClick={() => this.toggleTable()}
-                        />
+                        <ToggleTechniquesTableButton />
 
-                        {table}
+                        <TechniquesTable />
                     </div>
                 </div>
 

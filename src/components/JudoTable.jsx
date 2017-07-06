@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Table = ({ selectedSort, selectedTechniqueName, setSort, techniques }) => {
+const JudoTable = ({ selectedSort, selectedTechniqueName, setSort, techniques }) => {
     const body = techniques.map((technique) => {
         const video = technique.youtube ? <a href={technique.youtube} target='_blank'>{technique.romaji}</a> : <span>{technique.romaji}</span>;
 
@@ -22,7 +22,7 @@ const Table = ({ selectedSort, selectedTechniqueName, setSort, techniques }) => 
                 <tr>
                     <th onClick={() => setSort("romaji")} className={ selectedSort === "romaji" ? "font-italic" : "" }>Name</th>
                     <th onClick={() => setSort("technique")} className={ selectedSort === "technique" ? "font-italic" : "" }>Technique</th>
-                    <th onClick={() => setSort("belt")} className={ selectedSort === "belt" ? "font-italic" : "" }>Belt</th>
+                    <th onClick={() => setSort("beltjudo")} className={ selectedSort === "beltjudo" ? "font-italic" : "" }>Belt</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,4 +33,4 @@ const Table = ({ selectedSort, selectedTechniqueName, setSort, techniques }) => 
     );
 };
 
-export default Table;
+export default JudoTable;
