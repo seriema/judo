@@ -53,14 +53,14 @@ class App extends Component {
         let table = null;
 
         if (store.state.showCards) {
-            if (this.state.selectedTechnique == null) {
+            if (this.state.selectedTechnique === null) {
                 card = <SingleCard
                         cardClass='card-primary card-inverse'
                         header='Hello!'
                     >
                     <span>
                         Welcome to the Suginoharyu technique trainer.<br/>
-                        Above you can select what belt and technique types you want to practice on. Once you have made your selections, click "Pick another card" to select a random technique and try to guess what technique it is based on its name, then click the card to flip it and see if you were right!
+                        Above you can select what belt and technique types you want to practice on. Once you have made your selections, click &quot;Pick another card&quot; to select a random technique and try to guess what technique it is based on its name, then click the card to flip it and see if you were right!
                     </span>
                 </SingleCard>
             } else if (!this.state.selectedTechnique.youtube) {

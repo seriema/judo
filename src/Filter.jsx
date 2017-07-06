@@ -23,7 +23,7 @@ function TechniqueTypePicker(props) {
             // bind to selectedTechniques ?
             <label key={t} className='custom-control custom-checkbox mb-2 mr-2'>
                 <input type='checkbox' id={t} value={t} className='custom-control-input' onChange={(event) => props.setSelectedTechniqueType(event.target.value)} />
-                <span className='custom-control-indicator'></span>
+                <span className='custom-control-indicator'/>
                 <span htmlFor={t} className='custom-control-description'>{t}</span>
             </label>
         );
