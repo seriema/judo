@@ -124,6 +124,16 @@ let store = {
         return techniques.sort(store.techniqueSortOrder.bind(this));
     },
 
+    techniquesWithVideo() {
+        return store.techniques().filter(function (tech) {
+            return !!tech.youtube;
+        });
+    },
+
+    toggleTable() {
+        store.state.showTable = !store.state.showTable;
+    },
+
     toggleTranslation() {
         store.state.showTranslation = !store.state.showTranslation;
     },
@@ -132,7 +142,7 @@ let store = {
         let validType = store.state.selectedTechniques.length === 0 ||
             store.state.selectedTechniques.indexOf(technique.technique) !== -1;
 
-        let validBelt = store.state.selectedBelt === null ||
+        let validBelt = store.state.selectedBelt === "" ||
             store.state.selectedBelt === dataFriendly(technique.beltjudo);
 
         return validType && validBelt;
@@ -146,5 +156,7 @@ let store = {
 };
 
 store.init();
+
+window.store = store; // Hack for debugging
 
 export default store;

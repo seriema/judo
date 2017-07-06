@@ -1,39 +1,105 @@
 import React, { Component } from 'react';
 import store from './store';
 import Filter from './Filter.jsx';
-import Card from './Card.jsx';
+import Table from './Table.jsx';
+import { SingleCard, TextCard, VideoCard } from './Card.jsx';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            selectedTechnique: null
-        };
+    componentWillMount() {
+        this.pickCard();
     }
 
     pickCard() {
-        // TODO: Always flip the card to side A when picking a new card.
-        //this.showSideA = true;
-
-        const filteredTechniques = store.techniques().filter(function (tech) {
-            return !!tech.youtube;
-        });
+        const filteredTechniques = store.techniquesWithVideo();
 
         if (filteredTechniques.length === 0) {
+            this.setState({
+                selectedTechnique: null,
+                showSideA: true
+            });
             store.setSelectedTechniqueName(null);
         } else {
             const maxId = filteredTechniques.length;
             const randomId = Math.floor(Math.random() * maxId);
             const randomTechnique = filteredTechniques[randomId];
 
-            this.setState({selectedTechnique: randomTechnique});
+            this.setState({
+                selectedTechnique: randomTechnique,
+                showSideA: true
+            });
             store.setSelectedTechniqueName(randomTechnique.romaji);
         }
     }
 
+    flipCard() {
+        if (!this.state.hasError) {
+            this.setState({
+                showSideA: !this.state.showSideA
+            });
+        }
+    }
+
+    toggleTable() {
+        store.toggleTable();
+        this.setState({
+            showTable: store.state.showTable
+        });
+    }
+
     render() {
+        let card = null;
+        let table = null;
+
+        if (store.state.showCards) {
+            if (this.state.selectedTechnique == null) {
+                card = <SingleCard
+                        cardClass='card-primary card-inverse'
+                        header='Hello!'
+                    >
+                    <span>
+                        Welcome to the Suginoharyu technique trainer.<br/>
+                        Above you can select what belt and technique types you want to practice on. Once you have made your selections, click "Pick another card" to select a random technique and try to guess what technique it is based on its name, then click the card to flip it and see if you were right!
+                    </span>
+                </SingleCard>
+            } else if (!this.state.selectedTechnique.youtube) {
+                card = <SingleCard
+                        cardClass='card-danger card-inverse'
+                        header='Sorry!'
+                    >
+                    <span>
+                        There are no videos for the filters you selected.<br/>
+                        Selected belt: { store.state.selectedBelt || 'All belts' }<br/>
+                        Selected technique types: { store.state.selectedTechniqueTypes }
+                    </span>
+                </SingleCard>
+            } else {
+                if (this.state.showSideA) {
+                    card = <TextCard
+                        onClick={() => this.flipCard()}
+                        belt={this.state.selectedTechnique.beltjudo}
+                        technique={this.state.selectedTechnique}
+                    />
+                } else {
+                    card = <VideoCard
+                        onClick={() => this.flipCard()}
+                        belt={this.state.selectedTechnique.beltjudo}
+                        technique={this.state.selectedTechnique}
+                    />
+                }
+            }
+        }
+
+        if (store.state.showTable) {
+            table = <Table
+                techniques={store.techniquesWithVideo()}
+                selectedTechniqueName={store.state.selectedTechniqueName}
+                setSort={store.setSelectedSort}
+                selectedSort={store.state.selectedSort}
+            />;
+        }
+
         return (
             <div className="App container mt-4">
                 <div className="App-header">
@@ -51,6 +117,7 @@ class App extends Component {
                             selectedBelt={store.state.selectedBelt}
                             setSelectedBelt={store.setSelectedBelt}
                             techniqueNames={store.techniqueNames()}
+                            setSelectedTechniqueType={store.setSelectedTechniqueName}
                         />
                     </div>
                 </div>
@@ -59,20 +126,12 @@ class App extends Component {
                     <div className="col-lg-6">
                         <button onClick={() => this.pickCard()} className='btn btn-primary mb-2'>Pick another card</button>
 
-                        if (store.state.showCards) {
-                            <Card
-                                selectedBelt={store.state.selectedBelt}
-                                selectedTechniqueTypes={store.state.selectedTechniques}
-                                selectedTechnique={this.state.selectedTechnique}
-                            />
-                        }
+                        {card}
                     </div>
                     <div className="col-lg-6">
-{/*
-                        <button v-on:click='toggleTable' class='btn btn-link'>{{ showTable ? "Hide techniques" : "Show all filtered techniques" }}</button>
+                        <button onClick={() => this.toggleTable()} className='btn btn-link'>{ store.state.showTable ? "Hide techniques" : "Show all filtered techniques" }</button>
 
-                        <judo-table v-if="showTable"></judo-table>
-*/}
+                        {table}
                     </div>
                 </div>
 

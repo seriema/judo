@@ -22,7 +22,7 @@ function TechniqueTypePicker(props) {
         return (
             // bind to selectedTechniques ?
             <label key={t} className='custom-control custom-checkbox mb-2 mr-2'>
-                <input type='checkbox' id={t} value={t} className='custom-control-input' />
+                <input type='checkbox' id={t} value={t} className='custom-control-input' onChange={(event) => props.setSelectedTechniqueType(event.target.value)} />
                 <span className='custom-control-indicator'></span>
                 <span htmlFor={t} className='custom-control-description'>{t}</span>
             </label>
@@ -36,7 +36,7 @@ function TechniqueTypePicker(props) {
     );
 }
 
-class Filter extends Component {
+export default class Filter extends Component {
     render() {
         return (
             <div className='c-judo-filter'>
@@ -49,6 +49,7 @@ class Filter extends Component {
 
                     <TechniqueTypePicker
                         techniqueNames={this.props.techniqueNames}
+                        setSelectedTechniqueType={this.props.setSelectedTechniqueType}
                     />
                 </form>
             </div>
@@ -56,48 +57,3 @@ class Filter extends Component {
     }
 }
 
-export default Filter;
-
-
-/*
-
-Vue.component("judo-filter", {
-    data: function () {
-        return {
-            sharedState: window.store.state,
-            selectedTechniques: window.store.state.selectedTechniques.slice() // Don't databind directly to the states, but we want this property here because checkboxes are handled a bit special by Vue so we don't want to reinvent all the logic of keeping an array matching what values are checked.
-        };
-    },
-
-    computed: {
-        belts() {
-            return window.store.belts();
-        },
-
-        selectedBelt: {
-            get: function () {
-                return this.sharedState.selectedBelt;
-            },
-            set: function (newValue) {
-                window.store.setSelectedBelt(newValue);
-            }
-        },
-
-        techniqueNames() {
-            return window.store.techniqueNames();
-        }
-    },
-
-    methods: {
-        flipView(event) {
-            window.store.flipView(event);
-        }
-    },
-
-    watch: {
-        selectedTechniques(newValue, oldValue) {
-            window.store.setSelectedTechniques(newValue);
-        }
-    }
-});
-*/
