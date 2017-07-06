@@ -66,7 +66,13 @@ function VideoCard(props) {
             header={props.technique.romaji}
         >
             <div className='video'>
-                <iframe src={youtubeUrl} width='640' height='360' frameBorder='0' style={{position:'absolute',width:'100%',height:'100%',left:0}} allowFullScreen />
+                <iframe
+                    src={youtubeUrl}
+                    title='technique video'
+                    width='640'
+                    height='360'
+                    frameBorder='0'
+                    style={{position:'absolute',width:'100%',height:'100%',left:0}} allowFullScreen />
             </div>
             <small className='card-text'>Tap the card to hide the answer</small>
         </SingleCard>
