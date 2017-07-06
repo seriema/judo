@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import store from './store';
 import Filter from './Filter.jsx';
 import Table from './Table.jsx';
+import ButtonLink from './components/ButtonLink.jsx';
 import { SingleCard, TextCard, VideoCard } from './Card.jsx';
 import logo from './logo.svg';
 import './App.css';
+
+
 
 class App extends Component {
     componentWillMount() {
@@ -129,7 +132,10 @@ class App extends Component {
                         {card}
                     </div>
                     <div className="col-lg-6">
-                        <button onClick={() => this.toggleTable()} className='btn btn-link'>{ store.state.showTable ? "Hide techniques" : "Show all filtered techniques" }</button>
+                        <ButtonLink
+                            text={store.state.showTable ? "Hide techniques": "Show all filtered techniques"}
+                            onClick={() => this.toggleTable()}
+                        />
 
                         {table}
                     </div>
