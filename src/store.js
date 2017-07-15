@@ -157,6 +157,4 @@ let store = {
 
 store.init();
 
-window.store = store; // Hack for debugging
-
 export default store;
