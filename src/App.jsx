@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import store from './store';
 import Filter from './Filter.jsx';
+import PickCardButton from './containers/PickCardButton';
 import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
 import TechniquesTable from './containers/TechniquesTable';
 import { SingleCard, TextCard, VideoCard } from './Card.jsx';
@@ -117,7 +118,7 @@ class App extends Component {
 
                 <div className="row">
                     <div className="col-lg-6">
-                        <button onClick={() => this.pickCard()} className='btn btn-primary mb-2'>Pick another card</button>
+                        <PickCardButton />
 
                         {card}
                     </div>

@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 import {
     TOGGLE_TABLE,
     TOGGLE_TRANSLATION,
-    SET_SORT
+    SET_SORT,
+    SET_RANDOM_TECHNIQUE
 } from './actions'
 
 function show(state = {}, action) {
@@ -39,6 +40,29 @@ function selected(state = {}, action) {
                     else
                         return 0;
                 })
+            };
+
+        case SET_RANDOM_TECHNIQUE:
+            const techniquesWithVideo = techniques => {
+                return techniques.filter(function (tech) {
+                    return !!tech.youtube;
+                });
+            };
+
+            const filteredTechniques = techniquesWithVideo(state.techniques);
+            let techniqueName = null;
+
+            if (filteredTechniques.length !== 0) {
+                const maxId = filteredTechniques.length;
+                const randomId = Math.floor(Math.random() * maxId);
+                const randomTechnique = filteredTechniques[randomId];
+
+                techniqueName = randomTechnique.romaji; // also set side A on the card
+            }
+
+            return {
+                ...state,
+                techniqueName
             };
         default:
             return state;

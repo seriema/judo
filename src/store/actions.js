@@ -5,6 +5,7 @@
 export const TOGGLE_TABLE = 'TOGGLE_TABLE';
 export const TOGGLE_TRANSLATION = 'TOGGLE_TRANSLATION';
 export const SET_SORT = 'SET_SORT';
+export const SET_RANDOM_TECHNIQUE = 'SET_RANDOM_TECHNIQUE';
 
 /*
  * action creators
@@ -26,5 +27,11 @@ export const setSort = filter => {
     return {
         type: SET_SORT,
         filter
+    };
+};
+
+export const setRandomTechnique = () => {
+    return {
+        type: SET_RANDOM_TECHNIQUE
     };
 };
