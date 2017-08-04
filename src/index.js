@@ -18,8 +18,9 @@ const initialState = {
         sort: "romaji",
     },
     show: {
+        answer: false,
         table: true,
-        cards: true,
+        card: true,
         translation: false
     }
 };

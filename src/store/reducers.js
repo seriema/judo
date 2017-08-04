@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import {
+    TOGGLE_SHOW_ANSWER,
     TOGGLE_TABLE,
     TOGGLE_TRANSLATION,
     SET_SORT,
@@ -8,6 +9,11 @@ import {
 
 function show(state = {}, action) {
     switch (action.type) {
+        case TOGGLE_SHOW_ANSWER:
+            return {
+                ...state,
+                answer: !state.answer
+            };
         case TOGGLE_TABLE:
             return {
                 ...state,
@@ -18,6 +24,11 @@ function show(state = {}, action) {
                 ...state,
                 translation: !state.translation
             };
+        case SET_RANDOM_TECHNIQUE:
+            return {
+                ...state,
+                answer: false
+            }
         default:
             return state;
     }
@@ -42,7 +53,7 @@ function selected(state = {}, action) {
                 })
             };
 
-        case SET_RANDOM_TECHNIQUE:
+        case SET_RANDOM_TECHNIQUE: {
             const techniquesWithVideo = techniques => {
                 return techniques.filter(function (tech) {
                     return !!tech.youtube;
@@ -54,16 +65,17 @@ function selected(state = {}, action) {
 
             if (filteredTechniques.length !== 0) {
                 const maxId = filteredTechniques.length;
-                const randomId = Math.floor(Math.random() * maxId);
+                const randomId = Math.floor(action.randomNumber * maxId);
                 const randomTechnique = filteredTechniques[randomId];
 
-                techniqueName = randomTechnique.romaji; // also set side A on the card
+                techniqueName = randomTechnique.romaji;
             }
 
             return {
                 ...state,
                 techniqueName
             };
+        }
         default:
             return state;
     }
