@@ -10,8 +10,10 @@ import data from './data';
 
 // Initial state for the store
 const initialState = {
+    techniques: data,
     selected: {
         // techniques: [],
+        categories: [],
         techniques: data,
         techniqueName: "",
         belt: "",

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import oldStore from './store';
 import { setRandomTechnique } from './store/actions';
-import Filter from './Filter.jsx';
+import BeltDropdown from './containers/BeltDropdown';
+import CategoryCheckboxes from './containers/CategoryCheckboxes';
 import PickCardButton from './containers/PickCardButton';
 import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
 import TechniquesTable from './containers/TechniquesTable';
@@ -32,13 +32,11 @@ class App extends Component {
 
                 <div className="row">
                     <div className="col">
-                        <Filter
-                            belts={oldStore.belts()}
-                            selectedBelt={oldStore.state.selectedBelt}
-                            setSelectedBelt={oldStore.setSelectedBelt}
-                            techniqueNames={oldStore.techniqueNames()}
-                            setSelectedTechniqueType={oldStore.setSelectedTechniqueName}
-                        />
+                        <form className='form-inline'>
+                            <BeltDropdown />
+
+                            <CategoryCheckboxes />
+                        </form>
                     </div>
                 </div>
 

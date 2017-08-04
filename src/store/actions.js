@@ -2,9 +2,11 @@
  * action types
  */
 
+export const TOGGLE_CATEGORY = 'TOGGLE_CATEGORY';
 export const TOGGLE_SHOW_ANSWER = 'TOGGLE_SHOW_ANSWER';
 export const TOGGLE_TABLE = 'TOGGLE_TABLE';
 export const TOGGLE_TRANSLATION = 'TOGGLE_TRANSLATION';
+export const SET_BELT = 'SET_BELT';
 export const SET_SORT = 'SET_SORT';
 export const SET_RANDOM_TECHNIQUE = 'SET_RANDOM_TECHNIQUE';
 
@@ -12,11 +14,18 @@ export const SET_RANDOM_TECHNIQUE = 'SET_RANDOM_TECHNIQUE';
  * action creators
  */
 
- export const toggleShowAnswer = () => {
+export const toggleCategory = category => {
+    return {
+        type: TOGGLE_CATEGORY,
+        category
+    };
+};
+
+export const toggleShowAnswer = () => {
     return {
         type: TOGGLE_SHOW_ANSWER
     };
-}
+};
 
 export const toggleTable = () => {
     return {
@@ -27,6 +36,13 @@ export const toggleTable = () => {
 export const toggleTranslation = () => {
     return {
         type: TOGGLE_TRANSLATION
+    };
+};
+
+export const setBelt = belt => {
+    return {
+        type: SET_BELT,
+        belt
     };
 };
 

@@ -1,11 +1,14 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import {
+    SET_BELT,
+    SET_SORT,
+    SET_RANDOM_TECHNIQUE,
+    TOGGLE_CATEGORY,
     TOGGLE_SHOW_ANSWER,
     TOGGLE_TABLE,
     TOGGLE_TRANSLATION,
-    SET_SORT,
-    SET_RANDOM_TECHNIQUE
-} from './actions'
+} from './actions';
+import { toggleElement } from '../helpers';
 
 function show(state = {}, action) {
     switch (action.type) {
@@ -36,6 +39,11 @@ function show(state = {}, action) {
 
 function selected(state = {}, action) {
     switch (action.type) {
+        case SET_BELT:
+            return {
+                ...state,
+                belt: action.belt
+            };
         case SET_SORT:
             return {
                 ...state,
@@ -76,14 +84,26 @@ function selected(state = {}, action) {
                 techniqueName
             };
         }
+        case TOGGLE_CATEGORY: {
+            return {
+                ...state,
+                categories: toggleElement(state.categories, action.category)
+            };
+        }
         default:
             return state;
     }
 }
 
+// Won't really be used but is needed to create the "techniques" branch of the store data.
+function techniques(state = {}) {
+    return state;
+}
+
 const judoApp = combineReducers({
     show,
-    selected
+    selected,
+    techniques
 });
 
 export default judoApp
