@@ -8,9 +8,10 @@ import { createStore } from 'redux';
 import judoApp from './store/reducers';
 import { setRandomTechnique } from './store/actions';
 import data from './data';
+import { getState, saveState } from './store/localStorage';
 
 // Initial state for the store
-const initialState = {
+let initialState = {
     techniques: data,
     selected: {
         // techniques: [],
@@ -28,12 +29,24 @@ const initialState = {
     }
 };
 
+const localState = getState();
+if (localState) {
+    initialState = {
+        ...initialState,
+        selected: localState.selected,
+        show: localState.show
+    };
+}
+
 // Debugging Redux with Redux Devtools Chrome Extension: http://extension.remotedev.io
 const debugInfo = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 // Create the store with initial state and debugging
 let store = createStore(judoApp, initialState, debugInfo);
-store.dispatch(setRandomTechnique())
+store.dispatch(setRandomTechnique());
+store.subscribe(() => {
+    saveState(store.getState());
+});
 
 // Ugly hack to make the store available if there's no devtool extension installed
 window.store = store;

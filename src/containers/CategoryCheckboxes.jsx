@@ -14,6 +14,7 @@ const techniqueNames = (techniques) => {
 
 const mapStateToProps = (state/*, ownProps*/) => {
     return {
+        defaultLabels: state.selected.categories,
         labels: techniqueNames(state.techniques)
     };
 };
