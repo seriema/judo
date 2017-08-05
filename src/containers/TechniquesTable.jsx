@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 import { setSort } from '../store/actions';
 import JudoTable from '../components/JudoTable';
 import HideableComponent from '../components/HideableComponent';
+import { filterTechniques } from '../helpers';
 
 const mapStateToProps = (state/*, ownProps*/) => {
     return {
         selectedSort: state.selected.sort,
         selectedTechniqueName: state.selected.techniqueName.toLowerCase(),
-        techniques: state.selected.techniques,
+        techniques: filterTechniques(state),
         show: state.show.table
     };
 };

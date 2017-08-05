@@ -15,7 +15,7 @@ let initialState = {
     techniques: data,
     selected: {
         // techniques: [],
-        categories: [],
+        categories: ['newaza', 'nagewaza', 'ukemiwaza'],
         techniques: data,
         techniqueName: "",
         belt: "",

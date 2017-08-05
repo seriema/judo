@@ -1,15 +1,11 @@
 import { connect } from 'react-redux';
 import CheckboxGroup from '../components/CheckboxGroup';
 import { toggleCategory } from '../store/actions';
-import { unique } from '../helpers';
+import { unique, withProperty } from '../helpers';
 
 const techniqueNames = (techniques) => {
-    const nonEmpty = techniques.filter(function (technique) {
-        // Removes techniques with no technique-type name
-        return !!technique.technique;
-    });
-
-    return unique(nonEmpty, "technique").sort();
+    const filtered = techniques.filter(withProperty('technique'));
+    return unique(filtered, 'technique').sort();
 };
 
 const mapStateToProps = (state/*, ownProps*/) => {

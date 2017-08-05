@@ -1,13 +1,9 @@
 import { connect } from 'react-redux';
 import Dropdown from '../components/Dropdown';
 import { setBelt } from '../store/actions';
-import { unique } from '../helpers';
+import { dataFriendly, unique } from '../helpers';
 
 function stringsToOptions(strings) {
-    const dataFriendly = string => {
-        // Turns strings like "All belts" into "allbelts". Useful for HTML values and string comparisons.
-        return !string ? '' : string.trim().toLowerCase().replace(' ', '');
-    };
 
     return strings
         .filter(function (belt) {

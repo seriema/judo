@@ -8,7 +8,7 @@ import {
     TOGGLE_TABLE,
     TOGGLE_TRANSLATION,
 } from './actions';
-import { toggleElement } from '../helpers';
+import { toggleElement, withProperty } from '../helpers';
 
 function show(state = {}, action) {
     switch (action.type) {
@@ -47,28 +47,13 @@ function selected(state = {}, action) {
         case SET_SORT:
             return {
                 ...state,
-                sort: action.filter,
-                techniques: state.techniques.sort((techA, techB) => {
-                    const a = techA[action.filter] ? techA[action.filter].toLowerCase() : '';
-                    const b = techB[action.filter] ? techB[action.filter].toLowerCase() : '';
-
-                    if (a < b)
-                        return -1;
-                    if (a > b)
-                        return 1;
-                    else
-                        return 0;
-                })
+                sort: action.filter
             };
 
         case SET_RANDOM_TECHNIQUE: {
-            const techniquesWithVideo = techniques => {
-                return techniques.filter(function (tech) {
-                    return !!tech.youtube;
-                });
-            };
+            const techniquesWithVideo = techniques => techniques.filter(withProperty('youtube'));
 
-            const filteredTechniques = techniquesWithVideo(state.techniques);
+            const filteredTechniques = techniquesWithVideo(state.techniques); // TODO: Use filterTechniques from helpers! And later, without having to access all techniques in the store from this subsection (store.selected)
             let techniqueName = null;
 
             if (filteredTechniques.length !== 0) {
@@ -106,4 +91,4 @@ const judoApp = combineReducers({
     techniques
 });
 
-export default judoApp
+export default judoApp;
