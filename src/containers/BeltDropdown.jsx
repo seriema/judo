@@ -19,7 +19,8 @@ function stringsToOptions(strings) {
 }
 
 const mapStateToProps = (state/*, ownProps*/) => {
-    // If there are techniques with no belt in judo they will get filtered out. (In the future I want to show the jujutsu techniques as well.
+    // If there are techniques with no belt in judo they will get filtered out.
+    // TODO: In the future I want to show the jujutsu techniques as well.
     let judoBelts = unique(state.techniques, 'beltjudo');
     let beltOptions = stringsToOptions(judoBelts);
 

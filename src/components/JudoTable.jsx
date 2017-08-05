@@ -9,7 +9,7 @@ const JudoTable = ({ selectedSort, selectedTechniqueName, setSort, techniques })
                 <td>
                     {video}
                 </td>
-                <td>{technique.technique}</td>
+                <td>{technique.category}</td>
                 <td>{technique.beltjudo}</td>
             </tr>
         );
@@ -21,7 +21,7 @@ const JudoTable = ({ selectedSort, selectedTechniqueName, setSort, techniques })
                 <thead className='thead-inverse'>
                 <tr>
                     <th onClick={() => setSort("romaji")} className={ selectedSort === "romaji" ? "font-italic" : "" }>Name</th>
-                    <th onClick={() => setSort("technique")} className={ selectedSort === "technique" ? "font-italic" : "" }>Technique</th>
+                    <th onClick={() => setSort("category")} className={ selectedSort === "category" ? "font-italic" : "" }>Technique</th>
                     <th onClick={() => setSort("beltjudo")} className={ selectedSort === "beltjudo" ? "font-italic" : "" }>Belt</th>
                 </tr>
                 </thead>

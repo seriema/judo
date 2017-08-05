@@ -2,7 +2,7 @@ const data = [
     {
         romaji: "de ashi harai",
         swedish: "gå framåt, ben, svep",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         beltjujutsu: "Brown",
         rank: "5 kyu",
@@ -12,7 +12,7 @@ const data = [
     {
         romaji: "hon kesa gatame",
         swedish: "ursprung, buddhistiskt klädesplagg, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Yellow",
         beltjujutsu: "Yellow",
         rank: "5 kyu",
@@ -22,7 +22,7 @@ const data = [
     {
         romaji: "ko uchi gari",
         swedish: "liten, insida, svepande rörelse",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         beltjujutsu: "Brown",
         rank: "5 kyu",
@@ -32,7 +32,7 @@ const data = [
     {
         romaji: "kubi nage",
         swedish: "hals, kast",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 8,
@@ -41,7 +41,7 @@ const data = [
     {
         romaji: "kuzure kesa gatame",
         swedish: "variant, buddhistiskt klädesplagg, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Yellow",
         beltjujutsu: "Yellow",
         rank: "5 kyu",
@@ -51,7 +51,7 @@ const data = [
     {
         romaji: "kuzure yoko shiho gatame",
         swedish: "variant, sida, i fyra riktningar, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Yellow",
         beltjujutsu: "Yellow",
         rank: "5 kyu",
@@ -61,7 +61,7 @@ const data = [
     {
         romaji: "mae ukemi",
         swedish: "framsida, fall",
-        technique: "Ukemi waza",
+        category: "Ukemi waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 1,
@@ -70,7 +70,7 @@ const data = [
     {
         romaji: "makura kesa gatame",
         swedish: "kudde?, buddhistiskt klädesplagg, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Yellow",
         beltjujutsu: "Yellow",
         rank: "5 kyu",
@@ -80,7 +80,7 @@ const data = [
     {
         romaji: "mune gatame",
         swedish: "bröst, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Yellow",
         beltjujutsu: "Yellow",
         rank: "5 kyu",
@@ -90,7 +90,7 @@ const data = [
     {
         romaji: "o goshi",
         swedish: "stor, höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         beltjujutsu: "Orange",
         jujutsu: "Green",
@@ -102,7 +102,7 @@ const data = [
     {
         romaji: "o soto gari",
         swedish: "stor, yttre, svepande rörelse",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 7,
@@ -111,7 +111,7 @@ const data = [
     {
         romaji: "o uchi gari",
         swedish: "stor, insida, svepande rörelse",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         beltjujutsu: "Brown",
         rank: "5 kyu",
@@ -121,7 +121,7 @@ const data = [
     {
         romaji: "tsuri goshi",
         swedish: "dra (fiske), höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 6,
@@ -131,7 +131,7 @@ const data = [
     {
         romaji: "uki goshi",
         swedish: "drivande, höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 4,
@@ -141,7 +141,7 @@ const data = [
     {
         romaji: "ushiro ukemi",
         swedish: "baksida, fall",
-        technique: "Ukemi waza",
+        category: "Ukemi waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 2,
@@ -150,7 +150,7 @@ const data = [
     {
         romaji: "yoko ukemi",
         swedish: "sida, fall",
-        technique: "Ukemi waza",
+        category: "Ukemi waza",
         beltjudo: "Yellow",
         rank: "5 kyu",
         order: 3,
@@ -159,7 +159,7 @@ const data = [
     {
         romaji: "harai goshi",
         swedish: "svep, höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         beltjujutsu: "Brown",
         rank: "4 kyu",
@@ -169,7 +169,7 @@ const data = [
     {
         romaji: "hiza guruma",
         swedish: "knä, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         rank: "4 kyu",
         order: 10,
@@ -178,7 +178,7 @@ const data = [
     {
         romaji: "ippon seoi nage",
         swedish: "ett, ta upp på ryggen, kast",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         beltjujutsu: "Green",
         rank: "4 kyu",
@@ -188,7 +188,7 @@ const data = [
     {
         romaji: "kami shiho gatame",
         swedish: "ställning(?), i fyra riktningar, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Orange",
         beltjujutsu: "Orange",
         rank: "4 kyu",
@@ -198,7 +198,7 @@ const data = [
     {
         romaji: "ko soto gake",
         swedish: "liten, yttre, krok",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         rank: "4 kyu",
         order: 2,
@@ -207,7 +207,7 @@ const data = [
     {
         romaji: "ko soto gari",
         swedish: "liten, yttre, svepande rörelse",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         rank: "4 kyu",
         order: 1,
@@ -216,7 +216,7 @@ const data = [
     {
         romaji: "koshi guruma",
         swedish: "höft, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         beltjujutsu: "Green",
         rank: "4 kyu",
@@ -226,7 +226,7 @@ const data = [
     {
         romaji: "kuzure kami shiho gatame",
         swedish: "variant, ställning(?), i fyra riktningar, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Orange",
         beltjujutsu: "Orange",
         rank: "4 kyu",
@@ -236,7 +236,7 @@ const data = [
     {
         romaji: "morote seoi nage",
         swedish: "med båda händerna, ta upp på ryggen, kast",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         beltjujutsu: "Blue",
         rank: "4 kyu",
@@ -246,7 +246,7 @@ const data = [
     {
         romaji: "sasae tsuri komi ashi",
         swedish: "stöd, dra (fiske), ta(?), höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         rank: "4 kyu",
         order: 9,
@@ -255,7 +255,7 @@ const data = [
     {
         romaji: "tai otoshi",
         swedish: "kropp, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         beltjujutsu: "Blue",
         rank: "4 kyu",
@@ -265,7 +265,7 @@ const data = [
     {
         romaji: "tsuri komi goshi",
         swedish: "dra (fiske), ta(?), höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Orange",
         rank: "4 kyu",
         order: 6,
@@ -274,7 +274,7 @@ const data = [
     {
         romaji: "ushiro kesa gatame",
         swedish: "baksida, buddhistiskt klädesplagg, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Orange",
         beltjujutsu: "Orange",
         rank: "4 kyu",
@@ -284,7 +284,7 @@ const data = [
     {
         romaji: "yoko shiho gatame",
         swedish: "sida, i fyra riktningar, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Orange",
         beltjujutsu: "Yellow",
         rank: "4 kyu",
@@ -294,7 +294,7 @@ const data = [
     {
         romaji: "hane goshi",
         swedish: "vinge, höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 3,
@@ -303,7 +303,7 @@ const data = [
     {
         romaji: "harai tsurikomi ashi",
         swedish: "svep, dra (fiske), ben",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 2,
@@ -312,7 +312,7 @@ const data = [
     {
         romaji: "kata gatame",
         swedish: "skuldra, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Green",
         beltjujutsu: "Orange",
         rank: "3 kyu",
@@ -322,7 +322,7 @@ const data = [
     {
         romaji: "kuzure tate shiho gatame",
         swedish: "variant, vertikal, i fyra riktningar, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Green",
         beltjujutsu: "Orange",
         rank: "3 kyu",
@@ -332,7 +332,7 @@ const data = [
     {
         romaji: "okuri ashi barai",
         swedish: "par, ben, svep",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 1,
@@ -341,7 +341,7 @@ const data = [
     {
         romaji: "seoi otoshi",
         swedish: "ta upp på ryggen, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 5,
@@ -350,7 +350,7 @@ const data = [
     {
         romaji: "sumi gaeshi",
         swedish: "hörn, vändning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 7,
@@ -359,7 +359,7 @@ const data = [
     {
         romaji: "tate shiho gatame",
         swedish: "vertikal, i fyra riktningar, fasthållning",
-        technique: "Ne waza",
+        category: "Ne waza",
         beltjudo: "Green",
         beltjujutsu: "Orange",
         rank: "3 kyu",
@@ -369,7 +369,7 @@ const data = [
     {
         romaji: "tomoe nage",
         swedish: "hjul, kast",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 6,
@@ -378,7 +378,7 @@ const data = [
     {
         romaji: "uchi mata",
         swedish: "insida, ?",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Green",
         rank: "3 kyu",
         order: 4,
@@ -387,7 +387,7 @@ const data = [
     {
         romaji: "ashi guruma",
         swedish: "ben, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 4,
@@ -396,7 +396,7 @@ const data = [
     {
         romaji: "o guruma",
         swedish: "stor, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 3,
@@ -405,7 +405,7 @@ const data = [
     {
         romaji: "o soto guruma",
         swedish: "stor, yttre, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 7,
@@ -414,7 +414,7 @@ const data = [
     {
         romaji: "o soto otoshi",
         swedish: "stor, yttre, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         beltjujutsu: "Orange",
         rank: "2 kyu",
@@ -424,7 +424,7 @@ const data = [
     {
         romaji: "sode tsuri komi goshi",
         swedish: "ärm, dra (fiske), ta(?), höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 1,
@@ -433,7 +433,7 @@ const data = [
     {
         romaji: "soto maki komi",
         swedish: "ärm, ?, ta(?)",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 2,
@@ -442,7 +442,7 @@ const data = [
     {
         romaji: "tani otoshi",
         swedish: "dal, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         beltjujutsu: "Brown",
         rank: "2 kyu",
@@ -452,7 +452,7 @@ const data = [
     {
         romaji: "uki waza",
         swedish: "drivande, teknik",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         beltjujutsu: "Brown",
         rank: "2 kyu",
@@ -462,7 +462,7 @@ const data = [
     {
         romaji: "ushiro goshi",
         swedish: "baksida, höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 9,
@@ -471,7 +471,7 @@ const data = [
     {
         romaji: "utsuri goshi",
         swedish: "?, höft",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Blue",
         rank: "2 kyu",
         order: 10,
@@ -480,7 +480,7 @@ const data = [
     {
         romaji: "kata guruma",
         swedish: "skuldra, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         beltjujutsu: "Blue",
         rank: "1 kyu",
@@ -490,7 +490,7 @@ const data = [
     {
         romaji: "morote gari",
         swedish: "med båda händerna, svepande rörelse",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         rank: "1 kyu",
         order: 6,
@@ -499,7 +499,7 @@ const data = [
     {
         romaji: "sukui nage",
         swedish: "ösa upp, kast",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         beltjujutsu: "Blue",
         rank: "1 kyu",
@@ -509,7 +509,7 @@ const data = [
     {
         romaji: "sumi otoshi",
         swedish: "hörn, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         rank: "1 kyu",
         order: 5,
@@ -518,7 +518,7 @@ const data = [
     {
         romaji: "te guruma",
         swedish: "hand, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         rank: "1 kyu",
         order: 8,
@@ -527,7 +527,7 @@ const data = [
     {
         romaji: "uki otoshi",
         swedish: "drivande, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         rank: "1 kyu",
         order: 4,
@@ -536,7 +536,7 @@ const data = [
     {
         romaji: "ura nage",
         swedish: "motsatt, kast",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         rank: "1 kyu",
         order: 10,
@@ -545,7 +545,7 @@ const data = [
     {
         romaji: "yoko gake",
         swedish: "sida, krok",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         rank: "1 kyu",
         order: 2,
@@ -554,7 +554,7 @@ const data = [
     {
         romaji: "yoko guruma",
         swedish: "sida, hjul",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         beltjujutsu: "Brown",
         rank: "1 kyu",
@@ -564,7 +564,7 @@ const data = [
     {
         romaji: "yoko otoshi",
         swedish: "sida, nedfällning",
-        technique: "Nage waza",
+        category: "Nage waza",
         beltjudo: "Brown",
         beltjujutsu: "Blue",
         rank: "1 kyu",

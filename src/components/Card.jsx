@@ -45,7 +45,7 @@ const TextCard = ({ belt, onClick, technique, showTranslation }) => {
         >
             <CardText>
                 Belt: {belt}<br/>
-                Technique type: {technique.technique}<br/>
+                Technique type: {technique.category}<br/>
                 <small className='card-text'>Tap the card to see the answer</small>
             </CardText>
         </SingleCard>

@@ -82,6 +82,6 @@ export const filterTechniques = state => {
     return state.techniques
         .filter(withProperty('youtube'))
         .filter(propertyEqualsIfExists('beltjudo', state.selected.belt))
-        .filter(propertyContains('technique', state.selected.categories))
+        .filter(propertyContains('category', state.selected.categories))
         .sort(onProperty(state.selected.sort));
 };

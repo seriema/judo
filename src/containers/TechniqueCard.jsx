@@ -4,7 +4,7 @@ import { toggleShowAnswer } from '../store/actions';
 import { SingleCard, TextCard, VideoCard } from '../components/Card';
 import HideableComponent from '../components/HideableComponent';
 
-const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, showTranslation, sideA, onClick }) =>
+const TechniqueCardComponent = ({ technique, belt, categories, show, showTranslation, sideA, onClick }) =>
 {
     if (!show)
         return null;
@@ -25,7 +25,7 @@ const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, showTra
             header='Sorry!'
         >
             <span>
-                There are no { techniqueTypes ? techniqueTypes.join(' or ') : null } techniques for { belt || 'all' } belts.
+                There are no { categories ? categories.join(' or ') : null } techniques for { belt || 'all' } belts.
             </span>
         </SingleCard>
     } else if (!technique.youtube) {
@@ -36,7 +36,7 @@ const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, showTra
             <span>
                 There are no videos for the filters you selected.<br/>
                 Selected belt: { belt || 'All belts' }<br/>
-                Selected technique types: { techniqueTypes }
+                Selected technique types: { categories }
             </span>
         </SingleCard>
     } else {
@@ -62,7 +62,7 @@ const mapStateToProps = (state/*, ownProps*/) => {
     return {
         technique: selectedTechnique,
         belt: state.selected.belt,
-        techniqueTypes: state.selected.categories,
+        categories: state.selected.categories,
         show: state.show.card,
         showTranslation: state.show.translation,
         sideA: !state.show.answer

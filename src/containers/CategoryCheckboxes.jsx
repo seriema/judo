@@ -4,8 +4,8 @@ import { setRandomTechnique, toggleCategory } from '../store/actions';
 import { unique, withProperty } from '../helpers';
 
 const techniqueNames = (techniques) => {
-    const filtered = techniques.filter(withProperty('technique'));
-    return unique(filtered, 'technique').sort();
+    const filtered = techniques.filter(withProperty('category'));
+    return unique(filtered, 'category').sort();
 };
 
 const mapStateToProps = (state/*, ownProps*/) => {
