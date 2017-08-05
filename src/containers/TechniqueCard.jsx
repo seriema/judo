@@ -4,7 +4,7 @@ import { toggleShowAnswer } from '../store/actions';
 import { SingleCard, TextCard, VideoCard } from '../components/Card';
 import HideableComponent from '../components/HideableComponent';
 
-const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, sideA, onClick }) =>
+const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, showTranslation, sideA, onClick }) =>
 {
     if (!show)
         return null;
@@ -45,6 +45,7 @@ const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, sideA, 
                 onClick={() => onClick()}
                 belt={technique.beltjudo}
                 technique={technique}
+                showTranslation={showTranslation}
             />
         } else {
             return <VideoCard
@@ -63,6 +64,7 @@ const mapStateToProps = (state/*, ownProps*/) => {
         belt: state.selected.belt,
         techniqueTypes: state.selected.categories,
         show: state.show.card,
+        showTranslation: state.show.translation,
         sideA: !state.show.answer
     }
 };

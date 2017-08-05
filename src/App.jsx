@@ -5,6 +5,7 @@ import PickCardButton from './containers/PickCardButton';
 import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
 import TechniquesTable from './containers/TechniquesTable';
 import TechniqueCard from './containers/TechniqueCard';
+import ToggleTranslationButton from './containers/ToggleTranslationButton';
 import logo from './logo.svg';
 import './App.css';
 
@@ -33,6 +34,7 @@ const App = () => {
             <div className="row">
                 <div className="col-lg-6">
                     <PickCardButton />
+                    <ToggleTranslationButton />
 
                     <TechniqueCard />
                 </div>

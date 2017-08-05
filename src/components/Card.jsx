@@ -31,17 +31,16 @@ const CardText = ({ children }) => {
     )
 };
 
-const TextCard = ({ belt, onClick, technique }) => {
+const TextCard = ({ belt, onClick, technique, showTranslation }) => {
     const classes = 'side-a ' + belt.toLowerCase();
     let clickHandler = onClick ? onClick : function(){};
-    // TODO: Make title (translation) optional
     return (
         <SingleCard
             cardClass={classes}
             onClick={() => clickHandler()}
             header={technique.romaji}
             title={
-                <span>Swedish translation: {technique.swedish}</span>
+                showTranslation ? <span>Swedish translation: {technique.swedish}</span> : null
             }
         >
             <CardText>

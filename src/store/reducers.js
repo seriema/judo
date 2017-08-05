@@ -25,6 +25,7 @@ function show(state = {}, action) {
         case TOGGLE_TRANSLATION:
             return {
                 ...state,
+                answer: false, // Also hide the answer. This makes the "hint" more obvious for the user if they click the "show hint" button over and over.
                 translation: !state.translation
             };
         case TOGGLE_CATEGORY:
