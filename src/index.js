@@ -4,7 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import judoApp from './store/reducers';
 import { setRandomTechnique } from './store/actions';
 import data from './data';
@@ -14,12 +15,10 @@ import { getState, saveState } from './store/localStorage';
 let initialState = {
     techniques: data,
     selected: {
-        // techniques: [],
         categories: ['newaza', 'nagewaza', 'ukemiwaza'],
-        techniques: data,
-        techniqueName: "",
-        belt: "",
-        sort: "romaji",
+        techniqueName: '',
+        belt: '',
+        sort: 'romaji',
     },
     show: {
         answer: false,
@@ -42,7 +41,8 @@ if (localState) {
 const debugInfo = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 // Create the store with initial state and debugging
-let store = createStore(judoApp, initialState, debugInfo);
+const middleware = debugInfo ? applyMiddleware(debugInfo, thunk) : applyMiddleware(thunk);
+let store = createStore(judoApp, initialState, middleware);
 store.dispatch(setRandomTechnique());
 store.subscribe(() => {
     saveState(store.getState());

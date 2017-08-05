@@ -39,6 +39,20 @@ export const unique = (array, propertyName) => {
     return uniques;
 }
 
+// Selects a random technique from the given list of techniques, and returns its name.
+// Usage: getRandomTechniqueName(state.techniques) -> 'O goshi'
+export const getRandomTechniqueName = techniques => {
+    if (techniques.length === 0) {
+        return null;
+    }
+
+    const maxId = techniques.length;
+    const randomId = Math.floor(Math.random() * maxId);
+    const randomTechnique = techniques[randomId];
+
+    return randomTechnique.romaji;
+};
+
 // Given the store it will return all the valid techniques given the selected filters.
 // Usage: filterTechniques(store.getState())
 export const filterTechniques = state => {

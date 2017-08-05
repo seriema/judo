@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Dropdown from '../components/Dropdown';
-import { setBelt } from '../store/actions';
+import { setBelt, setRandomTechnique } from '../store/actions';
 import { dataFriendly, unique } from '../helpers';
 
 function stringsToOptions(strings) {
@@ -37,7 +37,10 @@ const mapStateToProps = (state/*, ownProps*/) => {
 
 const mapDispatchToProps = (dispatch/*, ownProps*/) => {
     return {
-        onChange: belt => dispatch(setBelt(belt))
+        onChange: belt => {
+            dispatch(setBelt(belt));
+            dispatch(setRandomTechnique());
+        }
     };
 };
 

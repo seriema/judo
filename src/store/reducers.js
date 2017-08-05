@@ -2,13 +2,13 @@ import { combineReducers } from 'redux';
 import {
     SET_BELT,
     SET_SORT,
-    SET_RANDOM_TECHNIQUE,
+    SET_TECHNIQUE_NAME,
     TOGGLE_CATEGORY,
     TOGGLE_SHOW_ANSWER,
     TOGGLE_TABLE,
     TOGGLE_TRANSLATION,
 } from './actions';
-import { toggleElement, withProperty } from '../helpers';
+import { toggleElement } from '../helpers';
 
 function show(state = {}, action) {
     switch (action.type) {
@@ -27,7 +27,9 @@ function show(state = {}, action) {
                 ...state,
                 translation: !state.translation
             };
-        case SET_RANDOM_TECHNIQUE:
+        case TOGGLE_CATEGORY:
+        case SET_BELT:
+        case SET_TECHNIQUE_NAME:
             return {
                 ...state,
                 answer: false
@@ -50,23 +52,10 @@ function selected(state = {}, action) {
                 sort: action.filter
             };
 
-        case SET_RANDOM_TECHNIQUE: {
-            const techniquesWithVideo = techniques => techniques.filter(withProperty('youtube'));
-
-            const filteredTechniques = techniquesWithVideo(state.techniques); // TODO: Use filterTechniques from helpers! And later, without having to access all techniques in the store from this subsection (store.selected)
-            let techniqueName = null;
-
-            if (filteredTechniques.length !== 0) {
-                const maxId = filteredTechniques.length;
-                const randomId = Math.floor(action.randomNumber * maxId);
-                const randomTechnique = filteredTechniques[randomId];
-
-                techniqueName = randomTechnique.romaji;
-            }
-
+        case SET_TECHNIQUE_NAME: {
             return {
                 ...state,
-                techniqueName
+                techniqueName: action.techniqueName
             };
         }
         case TOGGLE_CATEGORY: {

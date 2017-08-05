@@ -19,6 +19,15 @@ const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, sideA, 
                 Above you can select what belt and technique types you want to practice on. Once you have made your selections, click &quot;Pick another card&quot; to select a random technique and try to guess what technique it is based on its name, then click the card to flip it and see if you were right!
             </span>
         </SingleCard>
+    } else if (!technique) {
+        return <SingleCard
+            cardClass='card-danger card-inverse'
+            header='Sorry!'
+        >
+            <span>
+                There are no { techniqueTypes ? techniqueTypes.join(' or ') : null } techniques for { belt || 'all' } belts.
+            </span>
+        </SingleCard>
     } else if (!technique.youtube) {
         return <SingleCard
             cardClass='card-danger card-inverse'
@@ -49,11 +58,10 @@ const TechniqueCardComponent = ({ technique, belt, techniqueTypes, show, sideA, 
 
 const mapStateToProps = (state/*, ownProps*/) => {
     let selectedTechnique = state.selected.techniques.filter(t => t.romaji === state.selected.techniqueName)[0]; // FIXME
-    // TODO: What if there's no technique?..
     return {
         technique: selectedTechnique,
         belt: state.selected.belt,
-        techniqueTypes: null, // TODO: Move technique types to the store
+        techniqueTypes: state.selected.categories,
         show: state.show.card,
         sideA: !state.show.answer
     }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CheckboxGroup from '../components/CheckboxGroup';
-import { toggleCategory } from '../store/actions';
+import { setRandomTechnique, toggleCategory } from '../store/actions';
 import { unique, withProperty } from '../helpers';
 
 const techniqueNames = (techniques) => {
@@ -17,7 +17,10 @@ const mapStateToProps = (state/*, ownProps*/) => {
 
 const mapDispatchToProps = (dispatch/*, ownProps*/) => {
     return {
-        onChange: category => dispatch(toggleCategory(category))
+        onChange: category => {
+            dispatch(toggleCategory(category));
+            dispatch(setRandomTechnique());
+        }
     };
 };
 
