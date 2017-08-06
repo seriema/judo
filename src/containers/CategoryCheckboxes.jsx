@@ -11,7 +11,8 @@ const techniqueNames = (techniques) => {
 const mapStateToProps = (state/*, ownProps*/) => {
     return {
         defaultLabels: state.selected.categories,
-        labels: techniqueNames(state.techniques)
+        labels: techniqueNames(state.techniques),
+        groupLabel: 'Technique categories'
     };
 };
 

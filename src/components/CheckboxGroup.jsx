@@ -1,18 +1,21 @@
 import React from 'react';
 import { dataFriendly } from '../helpers';
+import Checkbox from '../components/Checkbox';
 
-const CheckboxGroup = ({ labels, defaultLabels, onChange }) => {
+const CheckboxGroup = ({ groupLabel, labels, defaultLabels, onChange }) => {
     return (
         <div className='form-group'>
+            <label>{groupLabel}:</label>
+            <br />
             {labels.map((label) => {
                 const value = dataFriendly(label);
-                return (
-                    <label key={label} className='custom-control custom-checkbox mb-2 mr-2'>
-                        <input type='checkbox' id={value} value={value} defaultChecked={defaultLabels.indexOf(value) > -1} className='custom-control-input' onChange={(event) => onChange(event.target.value)} />
-                        <span className='custom-control-indicator'/>
-                        <span htmlFor={label} className='custom-control-description'>{label}</span>
-                    </label>
-                );
+                return <Checkbox
+                    key={value}
+                    label={label}
+                    value={value}
+                    defaultChecked={defaultLabels.indexOf(value) > -1}
+                    onChange={onChange}
+                />;
             })}
         </div>
     );

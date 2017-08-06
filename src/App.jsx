@@ -2,11 +2,11 @@ import React from 'react';
 import BeltDropdown from './containers/BeltDropdown';
 import CategoryCheckboxes from './containers/CategoryCheckboxes';
 import PickCardButton from './containers/PickCardButton';
+import Settings from './containers/Settings';
 import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
 import TechniquesTable from './containers/TechniquesTable';
 import TechniqueCard from './containers/TechniqueCard';
-import ToggleTranslationButton from './containers/ToggleTranslationButton';
-import logo from './logo.svg';
+import HintCheckboxes from './containers/HintCheckboxes';
 import './App.css';
 
 
@@ -14,27 +14,23 @@ const App = () => {
     return (
         <div className="App container mt-4">
             <div className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h2>Welcome to Suginoharyu</h2>
+                <h2>Suginoharyu</h2>
             </div>
-            <p className="App-intro">
-                To get started, select your belt and techniques.
-            </p>
 
             <div className="row">
                 <div className="col">
-                    <form className='form-inline'>
+                    <Settings>
+                        <p>Select the belt and techniques you want to study for.</p>
                         <BeltDropdown />
-
                         <CategoryCheckboxes />
-                    </form>
+                        <HintCheckboxes />
+                    </Settings>
                 </div>
             </div>
 
             <div className="row">
                 <div className="col-lg-6">
                     <PickCardButton />
-                    <ToggleTranslationButton />
 
                     <TechniqueCard />
                 </div>

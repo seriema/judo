@@ -4,7 +4,6 @@ import { setBelt, setRandomTechnique } from '../store/actions';
 import { dataFriendly, unique } from '../helpers';
 
 function stringsToOptions(strings) {
-
     return strings
         .filter(function (belt) {
             return !!belt;
@@ -31,6 +30,7 @@ const mapStateToProps = (state/*, ownProps*/) => {
     });
 
     return {
+        label: 'Belt',
         options: beltOptions,
         defaultValue: state.selected.belt
     }
