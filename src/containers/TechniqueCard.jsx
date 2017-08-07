@@ -58,7 +58,7 @@ const TechniqueCardComponent = ({ technique, belt, categories, show, showTransla
 }
 
 const mapStateToProps = (state/*, ownProps*/) => {
-    let selectedTechnique = state.selected.techniques.filter(t => t.romaji === state.selected.techniqueName)[0]; // FIXME
+    let selectedTechnique = state.techniques.filter(t => t.romaji === state.selected.techniqueName)[0]; // FIXME
     return {
         technique: selectedTechnique,
         belt: state.selected.belt,
