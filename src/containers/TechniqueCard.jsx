@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { toggleShowAnswer } from '../store/actions';
 import { SingleCard, TextCard, VideoCard } from '../components/Card';
 import HideableComponent from '../components/HideableComponent';
+import './TechniqueCard.css';
 
-const TechniqueCardComponent = ({ technique, belt, categories, show, showTranslation, sideA, onClick }) =>
-{
+const TechniqueCardComponent = ({ technique, belt, categories, show, showTranslation, sideA, onClick }) => {
     if (!show)
         return null;
 
@@ -40,20 +40,25 @@ const TechniqueCardComponent = ({ technique, belt, categories, show, showTransla
             </span>
         </SingleCard>
     } else {
-        if (sideA) {
-            return <TextCard
-                onClick={() => onClick()}
-                belt={technique.beltjudo}
-                technique={technique}
-                showTranslation={showTranslation}
-            />
-        } else {
-            return <VideoCard
-                onClick={() => onClick()}
-                belt={technique.beltjudo}
-                technique={technique}
-            />
-        }
+        return (
+            <div className={`c-technique-card ${sideA ? '' : 'tapped'}`} onClick={() => onClick()}>
+                <div className="flipper">
+                    <div className="front">
+                        <TextCard
+                            belt={technique.beltjudo}
+                            technique={technique}
+                            showTranslation={showTranslation}
+                        />
+                    </div>
+                    <div className="back">
+                        <VideoCard
+                            belt={technique.beltjudo}
+                            technique={technique}
+                        />
+                    </div>
+                </div>
+            </div>
+        );
     }
 }
 

@@ -14,6 +14,7 @@
 .c-judo-card {
     border-width: 10px;
     border-radius: 1.25rem;
+    height: 100%;
 }
 .c-judo-card.yellow {
     border-color: #FB1;
