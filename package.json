@@ -13,6 +13,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "eslint": "^4.8.0",
     "eslint-plugin-react": "^7.1.0",
     "react-scripts": "^1.0.10"
   },
