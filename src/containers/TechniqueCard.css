@@ -1,0 +1,77 @@
+/* Flip code from https://davidwalsh.name/css-flip#ieflip */
+
+.c-technique-card {
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.c-technique-card.tapped .back {
+    transform: rotateY(0deg);
+}
+.c-technique-card.tapped .front {
+    transform: rotateY(180deg);
+}
+
+/* TODO: Fix IE? It doesn't show a rotate animation, but it does switch sides */
+/* TODO: Find a better way to size the cards. */
+/* iPhone 5 is 320px wide */
+.c-technique-card, .c-technique-card .front, .c-technique-card .back {
+    width: 290px;
+    height: 290px;
+}
+/* iPhone 6 is 375px wide */
+    @media (min-width: 375px) {
+        .c-technique-card, .c-technique-card .front, .c-technique-card .back {
+            width: 345px;
+            height: 280px;
+        }
+    }
+/* iPhone 6 Plus is 414px wide */
+    @media (min-width: 414px) {
+        .c-technique-card, .c-technique-card .front, .c-technique-card .back {
+            width: 384px;
+            height: 310px;
+        }
+    }
+/* iPad in Portrait is 768px wide */
+    @media (min-width: 768px) {
+        .c-technique-card, .c-technique-card .front, .c-technique-card .back {
+            width: 690px;
+            height: 480px;
+        }
+    }
+/* iPad in Landscape is 1024px wide */
+    @media (min-width: 1024px) {
+        .c-technique-card, .c-technique-card .front, .c-technique-card .back {
+            width: 450px;
+            height: 340px;
+        }
+    }
+
+.c-technique-card .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+.c-technique-card .front,
+.c-technique-card .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.c-technique-card .front {
+    z-index: 2;
+/*    transform: rotateY(0deg);*/
+}
+
+.c-technique-card .back {
+	transform: rotateY(-180deg);
+}
