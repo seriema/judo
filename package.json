@@ -2,6 +2,7 @@
   "name": "judo-flashcards",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://johansson.jp/judo",
   "dependencies": {
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.6.0",
