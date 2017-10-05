@@ -1,10 +1,3 @@
-.footer {
-    padding: 1rem 0;
-    margin-top: 4rem;
-    font-size: 85%;
-    background-color: #f7f7f7;
-}
-
 .c-judo-card .video {
     position: relative;
     height: 0;
@@ -18,22 +11,23 @@
     left: 0;
 }
 
-.c-judo-card .card {
-    border-width: 20px;
+.c-judo-card {
+    border-width: 10px;
     border-radius: 1.25rem;
+    height: 100%;
 }
-.c-judo-card .card.yellow {
+.c-judo-card.yellow {
     border-color: #FB1;
 }
-.c-judo-card .card.orange {
+.c-judo-card.orange {
     border-color: #FA771E;
 }
-.c-judo-card .card.green {
+.c-judo-card.green {
     border-color: #1A5E25;
 }
-.c-judo-card .card.blue {
+.c-judo-card.blue {
     border-color: #101CA7;
 }
-.c-judo-card .card.brown {
+.c-judo-card.brown {
     border-color: #6A5720;
 }
