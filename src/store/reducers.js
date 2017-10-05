@@ -32,6 +32,7 @@ function show(state = {}, action) {
         case TOGGLE_CATEGORY:
         case SET_BELT:
         case SET_TECHNIQUE_NAME:
+        case SET_NEXT_TECHNIQUE:
             return {
                 ...state,
                 answer: false
