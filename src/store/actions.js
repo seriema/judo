@@ -1,5 +1,3 @@
-import { filterTechniques, getRandomTechniqueName } from '../helpers';
-
 /*
  * action types
  */
@@ -9,8 +7,11 @@ export const TOGGLE_SHOW_ANSWER = 'TOGGLE_SHOW_ANSWER';
 export const TOGGLE_TABLE = 'TOGGLE_TABLE';
 export const TOGGLE_TRANSLATION = 'TOGGLE_TRANSLATION';
 export const SET_BELT = 'SET_BELT';
+export const SET_NEXT_TECHNIQUE = 'SET_NEXT_TECHNIQUE';
 export const SET_SORT = 'SET_SORT';
 export const SET_TECHNIQUE_NAME = 'SET_TECHNIQUE_NAME';
+
+export const SORT_ENUM_RANDOM = 'SORT_ENUM_RANDOM';
 
 /*
  * action creators
@@ -54,14 +55,18 @@ export const setSort = filter => {
         filter
     };
 };
-
-// TODO: This is an odd type of action, and I'm not quite happy with it. It doesn't fit in with the other simple action creators, and doesn't have it's own action type that's serialized.
-export const setRandomTechnique = () => (dispatch, getState) =>
-    dispatch(setTechniqueName(getRandomTechniqueName(filterTechniques(getState()))));
+export const setSortToRandom = () => setSort(SORT_ENUM_RANDOM);
 
 export const setTechniqueName = (techniqueName) => {
     return {
         type: SET_TECHNIQUE_NAME,
         techniqueName
     };
+};
+
+export const setNextTechnique = () => {
+    return {
+        type: SET_NEXT_TECHNIQUE,
+        offset: 1
+    }
 };

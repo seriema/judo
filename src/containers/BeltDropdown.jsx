@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Dropdown from '../components/Dropdown';
-import { setBelt, setRandomTechnique } from '../store/actions';
+import { setBelt } from '../store/actions';
 import { dataFriendly, unique } from '../helpers';
 
 function stringsToOptions(strings) {
@@ -20,7 +20,7 @@ function stringsToOptions(strings) {
 const mapStateToProps = (state/*, ownProps*/) => {
     // If there are techniques with no belt in judo they will get filtered out.
     // TODO: In the future I want to show the jujutsu techniques as well.
-    let judoBelts = unique(state.techniques, 'beltjudo');
+    let judoBelts = unique(state.techniques.allItems, 'beltjudo');
     let beltOptions = stringsToOptions(judoBelts);
 
     // Add an "select all" option as the first option
@@ -40,7 +40,6 @@ const mapDispatchToProps = (dispatch/*, ownProps*/) => {
     return {
         onChange: belt => {
             dispatch(setBelt(belt));
-            dispatch(setRandomTechnique());
         }
     };
 };

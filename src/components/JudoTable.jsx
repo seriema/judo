@@ -1,11 +1,12 @@
 import React from 'react';
 
-const JudoTable = ({ selectedSort, selectedTechniqueName, setSort, techniques }) => {
+const JudoTable = ({ selectedSort, selectedTechniqueName, techniques, setSort, setTechnique }) => {
     const body = techniques.map((technique) => {
         const video = technique.youtube ? <a href={technique.youtube} target='_blank'>{technique.romaji}</a> : <span>{technique.romaji}</span>;
 
+        const activeClass = technique.romaji === selectedTechniqueName ? "table-active" : "";
         return (
-            <tr className={ technique.romaji === selectedTechniqueName ? "table-active" : "" } key={technique.romaji}>
+            <tr className={activeClass} key={technique.romaji} onClick={() => setTechnique(technique)}>
                 <td>
                     {video}
                 </td>
@@ -17,6 +18,7 @@ const JudoTable = ({ selectedSort, selectedTechniqueName, setSort, techniques })
 
     return (
         <div className='c-judo-table'>
+            <p>Click on the headers to sort, or click on a line to select the technique.</p>
             <table className='table'>
                 <thead className='thead-inverse'>
                 <tr>

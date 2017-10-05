@@ -7,6 +7,7 @@ import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButto
 import TechniquesTable from './containers/TechniquesTable';
 import TechniqueCard from './containers/TechniqueCard';
 import HintCheckboxes from './containers/HintCheckboxes';
+import RandomizeSortButton from './containers/RandomizeSortButton';
 import './App.css';
 
 
@@ -31,7 +32,14 @@ const App = () => {
 
                 <div className="row">
                     <div className="col-lg-6">
-                        <PickCardButton />
+                        <div className="btn-toolbar" role="toolbar" aria-label="Card selections">
+                            <div className="btn-group mr-2" role="group" aria-label="Main actions">
+                                <PickCardButton />
+                            </div>
+                            <div className="btn-group mr-2" role="group" aria-label="Secondary actions">
+                                <RandomizeSortButton />
+                            </div>
+                        </div>
 
                         <TechniqueCard />
                     </div>

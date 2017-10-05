@@ -1,13 +1,16 @@
 import React from 'react'
 
-const Button = ({ text, onClick }) => {
+const Button = ({ text, type, onClick }) => {
+    const buttonTypeClass = 'btn-' + type;
+    const buttonClass = 'btn mb-2 ' + buttonTypeClass;
+
     return (
         <button
             onClick={e => {
                 e.preventDefault();
                 onClick();
             }}
-            className='btn btn-primary mb-2'>
+            className={buttonClass}>
             {text}
         </button>
     );
