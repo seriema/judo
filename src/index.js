@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import judoApp from './store/reducers';
 import { setRandomTechnique } from './store/actions';
@@ -37,12 +37,11 @@ if (localState) {
     };
 }
 
-// Debugging Redux with Redux Devtools Chrome Extension: http://extension.remotedev.io
-const debugInfo = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
 // Create the store with initial state and debugging
-const middleware = debugInfo ? applyMiddleware(debugInfo, thunk) : applyMiddleware(thunk);
-let store = createStore(judoApp, initialState, middleware);
+let middleware = [thunk];
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // Debugging Redux with Redux Devtools Chrome Extension: http://extension.remotedev.io
+const store = createStore(judoApp, initialState, composeEnhancers(applyMiddleware(...middleware)));
+
 store.dispatch(setRandomTechnique());
 store.subscribe(() => {
     saveState(store.getState());
