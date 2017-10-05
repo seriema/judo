@@ -8,6 +8,7 @@ import TechniquesTable from './containers/TechniquesTable';
 import TechniqueCard from './containers/TechniqueCard';
 import HintCheckboxes from './containers/HintCheckboxes';
 import RandomizeSortButton from './containers/RandomizeSortButton';
+import './bootstrap.min.css';
 import './App.css';
 
 
