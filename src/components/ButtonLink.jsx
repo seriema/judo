@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const ButtonLink = ({ text, onClick }) => {
     return (
@@ -11,6 +12,12 @@ const ButtonLink = ({ text, onClick }) => {
             {text}
         </button>
     );
+};
+
+ButtonLink.propTypes = {
+    // Required
+    text: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonLink;

@@ -63,7 +63,12 @@ const TechniqueCardComponent = ({ technique, belt, categories, show, showTransla
 };
 
 const mapStateToProps = (state/*, ownProps*/) => {
-    const selectedTechnique = state.techniques.filteredItems[state.techniques.currentIndex];
+    let selectedTechnique = state.techniques.filteredItems[state.techniques.currentIndex];
+    // TODO: This is pretty ugly. I should normalize the belts somehow, maybe just use the kyu level?
+    selectedTechnique = {
+        ...selectedTechnique,
+        beltjudo: selectedTechnique.beltjudo.toLowerCase()
+    };
     return {
         technique: selectedTechnique,
         belt: state.selected.belt,

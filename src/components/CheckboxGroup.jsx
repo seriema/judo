@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { dataFriendly } from '../helpers';
 import Checkbox from '../components/Checkbox';
 
@@ -19,6 +20,14 @@ const CheckboxGroup = ({ groupLabel, labels, defaultLabels, onChange }) => {
             })}
         </div>
     );
+};
+
+CheckboxGroup.propTypes = {
+    // Required
+    groupLabel: PropTypes.string.isRequired,
+    labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+    defaultLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onChange: PropTypes.func.isRequired
 };
 
 export default CheckboxGroup;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { beltType, techniqueType } from '../helpers';
 import './Card.css';
 
 function youtubeEmbedUrl(youtubeUrl) {
@@ -21,6 +23,23 @@ const SingleCard = ({ cardClass, onClick, header, title, children }) => {
             </div>
         </div>
     );
+};
+
+SingleCard.propTypes = {
+    // Required
+    onClick: PropTypes.func.isRequired,
+    header: PropTypes.string.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.element,
+        PropTypes.arrayOf(PropTypes.element)
+    ]).isRequired,
+
+    // Optional
+    cardClass: PropTypes.string, // TODO: actually it's some CSS classes like: "card-danger card-inverse"
+    title: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element
+    ])
 };
 
 const CardText = ({ children }) => {
@@ -52,6 +71,16 @@ const TextCard = ({ belt, onClick, technique, showTranslation }) => {
     );
 };
 
+TextCard.propTypes = {
+    // Required
+    belt: beltType.isRequired,
+    technique: techniqueType.isRequired,
+    showTranslation: PropTypes.bool.isRequired,
+
+    // Optional
+    onClick: PropTypes.func
+};
+
 const VideoCard = ({ belt, onClick, technique }) => {
     const classes = 'side-b ' + belt.toLowerCase();
     let clickHandler = onClick ? onClick : function(){};
@@ -76,6 +105,15 @@ const VideoCard = ({ belt, onClick, technique }) => {
             <small className='card-text'>Tap the card to hide the answer</small>
         </SingleCard>
     );
+};
+
+VideoCard.propTypes = {
+    // Required
+    belt: beltType.isRequired,
+    technique: techniqueType.isRequired,
+
+    // Optional
+    onClick: PropTypes.func
 };
 
 export { SingleCard, TextCard, VideoCard };

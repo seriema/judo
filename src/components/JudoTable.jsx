@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { techniqueType, sortType } from '../helpers';
 
 const JudoTable = ({ selectedSort, selectedTechniqueName, techniques, setSort, setTechnique }) => {
     const body = techniques.map((technique) => {
@@ -33,6 +35,15 @@ const JudoTable = ({ selectedSort, selectedTechniqueName, techniques, setSort, s
             </table>
         </div>
     );
+};
+
+JudoTable.propTypes = {
+    // Required
+    selectedSort: sortType.isRequired,
+    selectedTechniqueName: PropTypes.string.isRequired,
+    techniques: PropTypes.arrayOf(techniqueType).isRequired,
+    setSort: PropTypes.func.isRequired,
+    setTechnique: PropTypes.func.isRequired
 };
 
 export default JudoTable;

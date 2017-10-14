@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+
+
 // Turns strings like "All belts" into "allbelts". Useful for HTML values and string comparisons.
 // Usage: dataFriendly('All belts'), or belts.map(dataFriendly)
 export const dataFriendly = string => {
@@ -38,3 +41,14 @@ export const unique = (array, propertyName) => {
 
     return uniques;
 };
+
+
+// TODO: These proptypes should be extracted to another file.
+export const beltType = PropTypes.oneOf(['white', 'yellow', 'orange', 'green', 'blue', 'brown']);
+export const techniqueType = PropTypes.shape({
+    youtube: PropTypes.string.isRequired,
+    romaji: PropTypes.string.isRequired,
+    category: PropTypes.oneOf(['newaza', 'nagewaza', 'ukemiwaza', 'Ne waza', 'Nage waza', 'Ukemi waza']).isRequired, // TODO: Need a better way of separating the "data friendly" name from the UI labels.
+    beltjudo: beltType.isRequired
+});
+export const sortType = PropTypes.oneOf(['romaji', 'category', 'beltjudo', 'random']);

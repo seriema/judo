@@ -1,4 +1,5 @@
 import React from 'react'
+ import PropTypes from 'prop-types';
 
 const HideableComponent = (WrappedComponent) =>
     class Hide extends React.Component {
@@ -9,5 +10,10 @@ const HideableComponent = (WrappedComponent) =>
             /> : null;
         }
     };
+
+HideableComponent.propTypes = {
+    // Required
+    WrappedComponent: PropTypes.element.isRequired
+};
 
 export default HideableComponent;
