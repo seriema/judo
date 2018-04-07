@@ -33,6 +33,7 @@ function show(state = {}, action) {
         case SET_BELT:
         case SET_TECHNIQUE_NAME:
         case SET_NEXT_TECHNIQUE:
+        case SET_SORT:
             return {
                 ...state,
                 answer: false
