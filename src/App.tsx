@@ -1,15 +1,17 @@
+import './App.css';
+import './bootstrap.min.css';
+
 import * as React from 'react';
+
 import BeltDropdown from './containers/BeltDropdown';
 import CategoryCheckboxes from './containers/CategoryCheckboxes';
-import PickCardButton from './containers/PickCardButton';
-import Settings from './containers/Settings';
-import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
-import TechniquesTable from './containers/TechniquesTable';
-import TechniqueCard from './containers/TechniqueCard';
 import HintCheckboxes from './containers/HintCheckboxes';
+import PickCardButton from './containers/PickCardButton';
 import RandomizeSortButton from './containers/RandomizeSortButton';
-import './bootstrap.min.css';
-import './App.css';
+import Settings from './containers/Settings';
+import TechniqueCard from './containers/TechniqueCard';
+import TechniquesTable from './containers/TechniquesTable';
+import ToggleTechniquesTableButton from './containers/ToggleTechniquesTableButton';
 
 class App extends React.Component {
   public render() {

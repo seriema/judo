@@ -1,9 +1,12 @@
 {
-  "extends": ["tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "exclude": [
-      "config/**/*.js",
+      "build/**/*.js",
       "node_modules/**/*.ts"
     ]
+  },
+  "rules": {
+    "no-empty": [true, "allow-empty-functions"]
   }
 }

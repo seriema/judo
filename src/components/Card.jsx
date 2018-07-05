@@ -11,7 +11,7 @@ function youtubeEmbedUrl(youtubeUrl) {
 
 const SingleCard = ({ cardClass, onClick, header, title, children }) => {
     const classes = 'c-judo-card card ' + cardClass;
-    let clickHandler = onClick ? onClick : function(){};
+    let clickHandler = onClick ? onClick : function() {};
     return (
         <div className={classes} onClick={() => clickHandler()}>
             <div className='card-block'>
