@@ -1,16 +1,25 @@
 import './bootstrap.min.css';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import App from './App';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, Middleware } from 'redux';
 import judoApp from './store/reducers';
 import data from './data';
 import { getState, saveState } from './store/localStorage';
+// import registerServiceWorker from './registerServiceWorker';
+
+declare global {
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any,
+        __REDUX_DEVTOOLS_EXTENSION__: any,
+        store: any;
+    }
+}
 
 // Initial state for the store
-let initialState = {
+let initialState : any = {
     techniques: {
         allItems: data,
         // These are initialized in the techniques reducer:
@@ -42,7 +51,7 @@ if (localState) {
 }
 
 // Create the store with initial state and optional debugging
-let middleware = [];
+let middleware: Middleware[] = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // Debugging Redux with Redux Devtools Chrome Extension: http://extension.remotedev.io
 const store = createStore(judoApp, initialState, composeEnhancers(applyMiddleware(...middleware)));
 
@@ -69,3 +78,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+// registerServiceWorker();

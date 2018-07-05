@@ -15,7 +15,8 @@ export const getState = () => {
     return loadUserData(propertyName, null);
 };
 
-export const saveState = ({selected, show}) => {
+export const saveState = (state) => {
+    const {selected, show} = state;
     saveUserData(propertyName, {
         selected,
         show

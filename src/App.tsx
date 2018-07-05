@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import BeltDropdown from './containers/BeltDropdown';
 import CategoryCheckboxes from './containers/CategoryCheckboxes';
 import PickCardButton from './containers/PickCardButton';
@@ -11,8 +11,8 @@ import RandomizeSortButton from './containers/RandomizeSortButton';
 import './bootstrap.min.css';
 import './App.css';
 
-
-const App = () => {
+class App extends React.Component {
+  public render() {
     return (
         <div className="App">
             <div className="App-header">
@@ -60,6 +60,7 @@ const App = () => {
             </footer>
         </div>
     );
-};
+  }
+}
 
 export default App;
