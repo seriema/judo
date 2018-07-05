@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Collapse, CardBlock, Card } from 'reactstrap';
+import { Button, Collapse, CardBody, Card } from 'reactstrap';
 import settings from '../settings.svg';
 
 class Settings extends Component {
@@ -22,9 +22,9 @@ class Settings extends Component {
             </Button>
             <Collapse isOpen={this.state.collapse} style={{ marginBottom: '1rem' }}>
                 <Card>
-                    <CardBlock>
+                    <CardBody>
                         {this.props.children}
-                    </CardBlock>
+                    </CardBody>
                 </Card>
             </Collapse>
         </div>
