@@ -20,8 +20,9 @@
         }
     },
     "rules": {
-        "react/prop-types": "off",
-        "no-console": "off"
+        "react/prop-types": "off", // TODO: Turn on?
+        "no-console": "off",
+        // TODO: Require ' quotes
     },
     "root": true
 }
