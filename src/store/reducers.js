@@ -136,7 +136,7 @@ function techniques(techniques = {}, selected, action) {
     switch (action.type) {
         case TOGGLE_CATEGORY:
         case SET_BELT:
-        case SET_SORT:
+        case SET_SORT: {
             const filteredItems = filterTechniques(techniques, selected);
             return {
                 ...newTechniques,
@@ -144,8 +144,8 @@ function techniques(techniques = {}, selected, action) {
                 currentIndex: 0,
                 currentName: filteredItems.length ? filteredItems[0].romaji : null
             };
-
-        case SET_TECHNIQUE_NAME:
+        }
+        case SET_TECHNIQUE_NAME: {
             return {
                 ...newTechniques,
                 currentIndex: newTechniques.filteredItems.findIndex(technique => {
@@ -153,8 +153,8 @@ function techniques(techniques = {}, selected, action) {
                 }),
                 currentName: action.techniqueName
             };
-
-        case SET_NEXT_TECHNIQUE:
+        }
+        case SET_NEXT_TECHNIQUE: {
             let nextIndex = newTechniques.currentIndex + action.offset;
             if (nextIndex >= newTechniques.filteredItems.length) {
                 nextIndex = 0;
@@ -164,7 +164,7 @@ function techniques(techniques = {}, selected, action) {
                 currentIndex: nextIndex,
                 currentName: newTechniques.filteredItems[nextIndex].romaji // This is pretty useful when debugging redux state changes
             };
-
+        }
         default:
             return newTechniques;
     }
